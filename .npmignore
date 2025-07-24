@@ -1,0 +1,26 @@
+# Source files
+src/
+tsconfig.json
+webpack.config.js
+*.tgz
+
+# Development and build tools
+.devcontainer/
+.github/
+.eslintrc.*
+.prettierrc*
+.prettierignore
+jest.config.*
+
+# Tests
+__tests__/
+*.test.ts
+*.spec.ts
+coverage/
+
+# Development dependencies
+node_modules/
+
+# Version control
+.git/
+.gitignore
