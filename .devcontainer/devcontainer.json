@@ -1,0 +1,21 @@
+{
+	"name": "sanitize-pii",
+	"image": "mcr.microsoft.com/devcontainers/base:bullseye",
+	"containerEnv": {
+		"SHELL": "/bin/zsh"
+	},
+	"features": {
+		"ghcr.io/devcontainers/features/node:1": {
+			"version": "24.4.1"
+		}
+	},
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"github.copilot",
+				"github.vscode-github-actions"
+			]
+		}
+	},
+	"remoteUser": "vscode"
+}
