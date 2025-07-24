@@ -27,7 +27,7 @@
   "scripts": {
     "build": "npm run clean && npm run build:types && npm run build:esm && npm run build:cjs && npm run build:umd",
     "build:types": "tsc --emitDeclarationOnly --outDir dist/types",
-    "build:esm": "tsc --module es2020 --outDir dist/esm",
+    "build:esm": "tsc --module ES2022 --outDir dist/esm",
     "build:cjs": "tsc --module commonjs --outDir dist/cjs",
     "build:umd": "webpack --mode production",
     "clean": "rm -rf dist || rmdir /s dist 2>nul || true",
