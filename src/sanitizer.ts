@@ -93,9 +93,9 @@ export class PiiSanitizer {
     const detectedPatterns: string[] = [];
 
     for (const pattern of this.patterns) {
-      if (pattern.regex.test(text)) {
+      let regex = new RegExp(pattern.regex.source, pattern.regex.flags);
+      if (regex.test(text)) {
         detectedPatterns.push(pattern.name);
-        pattern.regex.lastIndex = 0;
       }
     }
 

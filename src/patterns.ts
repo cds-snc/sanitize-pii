@@ -30,7 +30,7 @@ export const defaultPatterns: PiiPattern[] = [
   },
   {
     name: 'pri',
-    regex: /\b0?\d{2,3}-?\d{3}-?\d{3}\b/g,
+    regex: /\b\d{2,3}-?\d{3}-?\d{3}\b/g,
     description: 'Personal Record Identifier',
   },
   {
