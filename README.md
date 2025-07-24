@@ -5,13 +5,13 @@ TypeScript module for removing personally identifiable information (PII) from te
 ## Installation
 
 ```bash
-npm install sanitize-pii
+npm install @cdssnc/sanitize-pii
 ```
 
 ## Quick Start
 
 ```typescript
-import { sanitizePii, PiiSanitizer } from 'sanitize-pii';
+import { sanitizePii, PiiSanitizer } from '@cdssnc/sanitize-pii';
 
 // Simple usage with default patterns
 const text = "Contact me at john@example.com or call (555) 123-4567 with Account ID 1234";

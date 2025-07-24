@@ -1,6 +1,8 @@
 {
-  "name": "sanitize-pii",
+  "name": "@cdssnc/sanitize-pii",
   "version": "1.0.0",
+  "license": "MIT",
+  "author": "Government of Canada / Gouvernement du Canada",
   "description": "TypeScript module for removing personally identifiable information (PII) from text",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
@@ -15,10 +17,6 @@
     },
     "./umd": "./dist/umd/sanitize-pii.min.js"
   },
-  "files": [
-    "dist/",
-    "README.md"
-  ],
   "scripts": {
     "build": "npm run clean && npm run build:types && npm run build:esm && npm run build:cjs && npm run build:umd",
     "build:types": "tsc --emitDeclarationOnly --outDir dist/types",
@@ -35,16 +33,6 @@
     "format:check": "prettier --check \"src/**/*.{ts,js,json,md}\"",
     "prepare": "npm run build"
   },
-  "keywords": [
-    "pii",
-    "sanitization",
-    "privacy",
-    "data-protection",
-    "regex",
-    "redaction"
-  ],
-  "author": "Canadian Digital Service",
-  "license": "MIT",
   "devDependencies": {
     "@types/jest": "^29.5.5",
     "@typescript-eslint/eslint-plugin": "^6.7.2",
@@ -59,8 +47,5 @@
     "typescript": "^5.2.2",
     "webpack": "^5.88.2",
     "webpack-cli": "^5.1.4"
-  },
-  "engines": {
-    "node": ">=14.0.0"
   }
 }
