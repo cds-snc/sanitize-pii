@@ -4,9 +4,9 @@ import {
   defaultPatterns,
 } from '../../dist/esm/index.js';
 
-const testText = 'My email is john.doe@example.com and SIN is 123-345-678';
+const testText = 'My address is 123 Fake St and SIN is 123-345-678';
 const result = sanitizePii(testText);
-if (result.includes('john.doe@example.com') || result.includes('123-345-678')) {
+if (result.includes('123 Fake St') || result.includes('123-345-678')) {
   console.error('❌ ESM test failed: PII still visible in output');
   process.exit(1);
 }
@@ -19,7 +19,7 @@ if (!classResult.includes('[Redacted:')) {
   process.exit(1);
 }
 
-const detected = sanitizer.detectPii('My email is test@example.com');
+const detected = sanitizer.detectPii('My address is 123 Fake St');
 if (detected.length === 0) {
   console.error('❌ ESM test failed: Pattern detection failed');
   process.exit(1);

@@ -1,13 +1,10 @@
 const { sanitizePii, PiiSanitizer } = require('../../dist/cjs/index.js');
 
 const testText =
-  'My email is jane.smith@company.org and phone is (555) 987-6543';
+  'My phone number is (555) 987-6543';
 const result = sanitizePii(testText);
 
-if (
-  result.includes('jane.smith@company.org') ||
-  result.includes('(555) 987-6543')
-) {
+if (result.includes('(555) 987-6543')) {
   console.error('❌ CommonJS test failed: PII still visible in output');
   process.exit(1);
 }

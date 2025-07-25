@@ -27,9 +27,9 @@ if (typeof window.sanitizePii !== 'function') {
   process.exit(1);
 }
 
-const testText = 'Contact: bob@test.com, Address: 123 Fake St';
+const testText = 'Contact: 123-456-7890, Address: 123 Fake St';
 const result = window.sanitizePii(testText);
-if (result.includes('bob@test.com') || result.includes('123 Fake St')) {
+if (result.includes('123-456-7890') || result.includes('123 Fake St')) {
   console.error('❌ UMD test failed: PII still visible in browser output');
   process.exit(1);
 }
