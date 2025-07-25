@@ -227,6 +227,89 @@ describe('Default Patterns', () => {
     });
   });
 
+  describe('ip_address pattern', () => {
+    const ipPattern = defaultPatterns.find(p => p.name === 'ip_address')!;
+
+    it('should match valid IP addresses', () => {
+      const validIPs = [
+        '192.168.1.1',
+        '255.255.255.255',
+        '10.0.0.1',
+        '172.16.0.1',
+      ];
+
+      validIPs.forEach(ip => {
+        expect(ipPattern.regex.test(ip)).toBe(true);
+        ipPattern.regex.lastIndex = 0;
+      });
+    });
+
+    it('should not match invalid IP addresses', () => {
+      const invalidIPs = ['192.168.1', 'abc.def.ghi.jkl'];
+
+      invalidIPs.forEach(ip => {
+        expect(ipPattern.regex.test(ip)).toBe(false);
+        ipPattern.regex.lastIndex = 0;
+      });
+    });
+  });
+
+  describe('drivers_license_ontario pattern', () => {
+    const ontarioLicensePattern = defaultPatterns.find(
+      p => p.name === 'drivers_license_ontario'
+    )!;
+
+    it('should match valid Ontario drivers licenses', () => {
+      const validLicenses = ['A1234-56789-01234', 'B56781234567890'];
+
+      validLicenses.forEach(license => {
+        expect(ontarioLicensePattern.regex.test(license)).toBe(true);
+        ontarioLicensePattern.regex.lastIndex = 0;
+      });
+    });
+
+    it('should not match invalid Ontario drivers licenses', () => {
+      const invalidLicenses = [
+        'A123-45678-90123',
+        '1234-56789-01234',
+        'A123456789012',
+      ];
+
+      invalidLicenses.forEach(license => {
+        expect(ontarioLicensePattern.regex.test(license)).toBe(false);
+        ontarioLicensePattern.regex.lastIndex = 0;
+      });
+    });
+  });
+
+  describe('drivers_license_quebec pattern', () => {
+    const quebecLicensePattern = defaultPatterns.find(
+      p => p.name === 'drivers_license_quebec'
+    )!;
+
+    it('should match valid Quebec drivers licenses', () => {
+      const validLicenses = ['A1234-567890-01', 'B567812345602'];
+
+      validLicenses.forEach(license => {
+        expect(quebecLicensePattern.regex.test(license)).toBe(true);
+        quebecLicensePattern.regex.lastIndex = 0;
+      });
+    });
+
+    it('should not match invalid Quebec drivers licenses', () => {
+      const invalidLicenses = [
+        'A123-45678-901',
+        '1234-56789-012',
+        'A12345678901',
+      ];
+
+      invalidLicenses.forEach(license => {
+        expect(quebecLicensePattern.regex.test(license)).toBe(false);
+        quebecLicensePattern.regex.lastIndex = 0;
+      });
+    });
+  });
+
   it('should have all required properties', () => {
     defaultPatterns.forEach(pattern => {
       expect(pattern.name).toBeDefined();
