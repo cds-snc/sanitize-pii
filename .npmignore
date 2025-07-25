@@ -1,7 +1,7 @@
 # Source files
 src/
 tsconfig.json
-webpack.config.js
+webpack.config.*
 *.tgz
 
 # Development and build tools
@@ -13,6 +13,7 @@ webpack.config.js
 jest.config.*
 
 # Tests
+tests/
 __tests__/
 *.test.ts
 *.spec.ts

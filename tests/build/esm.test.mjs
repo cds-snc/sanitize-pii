@@ -4,10 +4,9 @@ import {
   defaultPatterns,
 } from '../../dist/esm/index.js';
 
-const testText = 'My email is john.doe@example.com and SSN is 123-45-6789';
+const testText = 'My email is john.doe@example.com and SIN is 123-345-678';
 const result = sanitizePii(testText);
-
-if (result.includes('john.doe@example.com') || result.includes('123-45-6789')) {
+if (result.includes('john.doe@example.com') || result.includes('123-345-678')) {
   console.error('❌ ESM test failed: PII still visible in output');
   process.exit(1);
 }

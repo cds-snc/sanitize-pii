@@ -4,6 +4,7 @@
   "license": "MIT",
   "author": "Government of Canada / Gouvernement du Canada",
   "description": "TypeScript module for removing personally identifiable information (PII) from text",
+  "type": "module",
   "publishConfig": {
     "access": "public"
   },
@@ -28,11 +29,11 @@
     "build": "npm run clean && npm run build:types && npm run build:esm && npm run build:cjs && npm run build:umd",
     "build:types": "tsc --emitDeclarationOnly --outDir dist/types",
     "build:esm": "tsc --module ES2022 --outDir dist/esm",
-    "build:cjs": "tsc --module commonjs --outDir dist/cjs",
+    "build:cjs": "tsc --module commonjs --outDir dist/cjs && echo '{\"type\":\"commonjs\"}' > dist/cjs/package.json",
     "build:umd": "webpack --mode production",
     "clean": "rm -rf dist || rmdir /s dist 2>nul || true",
     "test": "jest",
-    "test:build": "node tests/build/runner.js",
+    "test:build": "node tests/build/runner.mjs",
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage",
     "lint": "eslint src/**/*.ts",

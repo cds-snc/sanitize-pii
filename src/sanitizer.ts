@@ -1,5 +1,5 @@
-import { PiiPattern, SanitizeOptions } from './types';
-import { defaultPatterns } from './patterns';
+import { PiiPattern, SanitizeOptions } from './types.js';
+import { defaultPatterns } from './patterns.js';
 
 /**
  * PII Sanitizer for redacting personally identifiable information from text

@@ -1,11 +1,11 @@
 // Export types
-export type { PiiPattern, SanitizeOptions } from './types';
+export type { PiiPattern, SanitizeOptions } from './types.js';
 
 // Export patterns
-export { defaultPatterns } from './patterns';
+export { defaultPatterns } from './patterns.js';
 
 // Export main functionality
-export { PiiSanitizer, defaultSanitizer, sanitizePii } from './sanitizer';
+export { PiiSanitizer, defaultSanitizer, sanitizePii } from './sanitizer.js';
 
 // Default export for UMD builds
-export { sanitizePii as default } from './sanitizer';
+export { sanitizePii as default } from './sanitizer.js';

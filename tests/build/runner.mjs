@@ -1,20 +1,19 @@
-const { spawn } = require('child_process');
-const path = require('path');
+import { spawn } from 'child_process';
+import path from 'path';
 
 const tests = [
-  //{ name: 'ESM', file: 'esm.test.mjs', command: 'node' },
-  { name: 'CommonJS', file: 'cjs.test.js', command: 'node' },
-  { name: 'UMD', file: 'umd.test.js', command: 'node' },
+  { name: 'ESM', file: 'esm.test.mjs', command: 'node' },
+  { name: 'CommonJS', file: 'cjs.test.cjs', command: 'node' },
+  { name: 'UMD', file: 'umd.test.mjs', command: 'node' },
 ];
 
 async function runTest(test) {
   return new Promise((resolve, reject) => {
     console.log(`\nRunning ${test.name} test...`);
 
-    const testPath = path.join(__dirname, test.file);
+    const testPath = path.resolve(process.cwd(), 'tests/build', test.file);
     const child = spawn(test.command, [testPath], {
       stdio: 'inherit',
-      cwd: path.resolve(__dirname, '../..'),
     });
 
     child.on('close', code => {
