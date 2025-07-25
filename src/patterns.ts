@@ -14,12 +14,12 @@ export const defaultPatterns: PiiPattern[] = [
   },
   {
     name: 'drivers_license_ontario',
-    regex: /\b[A-Z]\d{4}-?\d{5}-?\d{5}\b/gi,
+    regex: /\b[A-Z]\d{4}[\s-]?\d{5}[\s-]?\d{5}\b/gi,
     description: 'Ontario drivers license',
   },
   {
     name: 'drivers_license_quebec',
-    regex: /\b[A-Z]\d{4}-?\d{6}-?\d{2}\b/gi,
+    regex: /\b[A-Z]\d{4}[\s-]?\d{6}[\s-]?\d{2}\b/gi,
     description: 'Quebec drivers license',
   },
   {

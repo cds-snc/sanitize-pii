@@ -230,7 +230,11 @@ describe('Default Patterns', () => {
     )!;
 
     it('should match valid Ontario drivers licenses', () => {
-      const validLicenses = ['A1234-56789-01234', 'B56781234567890'];
+      const validLicenses = [
+        'A1234-56789-01234',
+        'B56781234567890',
+        'A1234 56789 01234',
+      ];
 
       validLicenses.forEach(license => {
         expect(ontarioLicensePattern.regex.test(license)).toBe(true);
@@ -258,7 +262,11 @@ describe('Default Patterns', () => {
     )!;
 
     it('should match valid Quebec drivers licenses', () => {
-      const validLicenses = ['A1234-567890-01', 'B567812345602'];
+      const validLicenses = [
+        'A1234-567890-01',
+        'B567812345602',
+        'A1234 567890 01',
+      ];
 
       validLicenses.forEach(license => {
         expect(quebecLicensePattern.regex.test(license)).toBe(true);
