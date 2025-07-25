@@ -14,10 +14,10 @@ npm install @cdssnc/sanitize-pii
 import { sanitizePii, PiiSanitizer } from '@cdssnc/sanitize-pii';
 
 // Simple usage with default patterns
-const text = "Contact me at john@example.com or call (555) 123-4567 with Account ID 1234";
+const text = "Contact me at (555) 123-4567 with Account ID 1234";
 const sanitized = sanitizePii(text);
 console.log(sanitized);
-// Output: "Contact me at [Redacted: email] or call [Redacted: phone_number] with Account ID 1234"
+// Output: "Contact me at [Redacted: phone_number] with Account ID 1234"
 
 // Sanitizer with custom replacement template and pattern
 const sanitizer = new PiiSanitizer({
@@ -32,7 +32,7 @@ const sanitizer = new PiiSanitizer({
 
 const result = sanitizer.sanitize(text);
 console.log(result);
-// Output: "Contact me at ***email*** or call ***phone_number*** with ***account_id***"
+// Output: "Contact me at ***phone_number*** with ***account_id***"
 ```
 
 ## Development

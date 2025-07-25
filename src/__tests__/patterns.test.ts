@@ -1,38 +1,6 @@
 import { defaultPatterns } from '../patterns';
 
 describe('Default Patterns', () => {
-  describe('email pattern', () => {
-    const emailPattern = defaultPatterns.find(p => p.name === 'email')!;
-
-    it('should match valid email addresses', () => {
-      const validEmails = [
-        'test@example.com',
-        'user.name@domain.co.uk',
-        'first+last@subdomain.example.org',
-        'user123@test-domain.com',
-      ];
-
-      validEmails.forEach(email => {
-        expect(emailPattern.regex.test(email)).toBe(true);
-        emailPattern.regex.lastIndex = 0; // Reset for global regex
-      });
-    });
-
-    it('should not match invalid email addresses', () => {
-      const invalidEmails = [
-        'notanemail',
-        '@domain.com',
-        'user@',
-        'user@domain',
-      ];
-
-      invalidEmails.forEach(email => {
-        expect(emailPattern.regex.test(email)).toBe(false);
-        emailPattern.regex.lastIndex = 0;
-      });
-    });
-  });
-
   describe('phone_number pattern', () => {
     const phonePattern = defaultPatterns.find(p => p.name === 'phone_number')!;
 

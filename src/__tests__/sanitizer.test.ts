@@ -32,8 +32,8 @@ describe('PiiSanitizer', () => {
       const customSanitizer = new PiiSanitizer({
         replacementTemplate: '***{name}***',
       });
-      const result = customSanitizer.sanitize('test@example.com');
-      expect(result).toBe('***email***');
+      const result = customSanitizer.sanitize('123456789');
+      expect(result).toBe('***sin***');
     });
   });
 
@@ -51,10 +51,10 @@ describe('PiiSanitizer', () => {
   describe('removePattern', () => {
     it('should remove pattern by name', () => {
       const initialCount = sanitizer.getPatterns().length;
-      sanitizer.removePattern('email');
+      sanitizer.removePattern('phone_number');
       expect(sanitizer.getPatterns()).toHaveLength(initialCount - 1);
       expect(
-        sanitizer.getPatterns().find(p => p.name === 'email')
+        sanitizer.getPatterns().find(p => p.name === 'phone_number')
       ).toBeUndefined();
     });
   });
@@ -62,8 +62,8 @@ describe('PiiSanitizer', () => {
   describe('setReplacementTemplate', () => {
     it('should update replacement template', () => {
       sanitizer.setReplacementTemplate('REMOVED_{name}');
-      const result = sanitizer.sanitize('test@example.com');
-      expect(result).toBe('REMOVED_email');
+      const result = sanitizer.sanitize('123 Fake St');
+      expect(result).toBe('REMOVED_address');
     });
   });
 
@@ -78,16 +78,18 @@ describe('PiiSanitizer', () => {
       expect(sanitizer.sanitize(123 as any)).toBe(123);
     });
 
-    it('should sanitize email addresses', () => {
-      const text = 'Contact me at john.doe@example.com for more info';
+    it('should sanitize home addresses', () => {
+      const text = 'Contact me at 123 Fake St for more info';
       const result = sanitizer.sanitize(text);
-      expect(result).toBe('Contact me at [Redacted: email] for more info');
+      expect(result).toBe('Contact me at [Redacted: address] for more info');
     });
 
-    it('should sanitize multiple emails', () => {
-      const text = 'Email john@test.com or jane@example.org';
+    it('should sanitize multiple phone numbers', () => {
+      const text = 'Call (555) 123-4567 or (555) 987-6543';
       const result = sanitizer.sanitize(text);
-      expect(result).toBe('Email [Redacted: email] or [Redacted: email]');
+      expect(result).toBe(
+        'Call [Redacted: phone_number] or [Redacted: phone_number]'
+      );
     });
 
     it('should sanitize phone numbers', () => {
@@ -121,10 +123,10 @@ describe('PiiSanitizer', () => {
 
     it('should sanitize multiple PII types in one text', () => {
       const text =
-        'Email me at john@test.com or call (555) 123-4567. My postal code is K1A 0A6 and I live at 123 Main St., Ottawa.';
+        'Call me at (555) 123-4567. My postal code is K1A 0A6 and I live at 123 Main St., Ottawa.';
       const result = sanitizer.sanitize(text);
       expect(result).toBe(
-        'Email me at [Redacted: email] or call [Redacted: phone_number]. My postal code is [Redacted: postal_code] and I live at [Redacted: address]., Ottawa.'
+        'Call me at [Redacted: phone_number]. My postal code is [Redacted: postal_code] and I live at [Redacted: address]., Ottawa.'
       );
     });
 
@@ -141,16 +143,14 @@ describe('PiiSanitizer', () => {
       expect(result).toEqual([]);
     });
 
-    it('should detect email addresses', () => {
-      const result = sanitizer.detectPii('Contact john@test.com');
-      expect(result).toContain('email');
+    it('should detect home addresses', () => {
+      const result = sanitizer.detectPii('Contact me at 123 Fake Ave');
+      expect(result).toContain('address');
     });
 
     it('should detect multiple PII types', () => {
-      const result = sanitizer.detectPii(
-        'Email john@test.com or call (555) 123-4567'
-      );
-      expect(result).toContain('email');
+      const result = sanitizer.detectPii('PRI 12345678 or call (555) 123-4567');
+      expect(result).toContain('pri');
       expect(result).toContain('phone_number');
     });
 
@@ -163,15 +163,15 @@ describe('PiiSanitizer', () => {
 
 describe('sanitizePii convenience function', () => {
   it('should sanitize using default sanitizer', () => {
-    const result = sanitizePii('Email me at test@example.com');
-    expect(result).toBe('Email me at [Redacted: email]');
+    const result = sanitizePii('Call me at 1-123-456-7890');
+    expect(result).toBe('Call me at [Redacted: phone_number]');
   });
 
   it('should sanitize using custom options', () => {
-    const result = sanitizePii('Email me at test@example.com', {
+    const result = sanitizePii('Call me at 1-123-456-7890', {
       replacementTemplate: '***{name}***',
     });
-    expect(result).toBe('Email me at ***email***');
+    expect(result).toBe('Call me at ***phone_number***');
   });
 
   it('should work with custom patterns only', () => {

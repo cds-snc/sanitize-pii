@@ -8,11 +8,6 @@ export const defaultPatterns: PiiPattern[] = [
     description: 'Address',
   },
   {
-    name: 'email',
-    regex: /\b[^@\s]+@[A-Z0-9.-]+\.[A-Z]{2,}\b/gi,
-    description: 'Email address',
-  },
-  {
     name: 'canadian_passport',
     regex: /\b([A-Z]{2}[\s-]?\d{6})\b/g,
     description: 'Canadian passport',
