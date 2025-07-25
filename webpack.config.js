@@ -18,8 +18,11 @@ module.exports = {
   output: {
     filename: 'sanitize-pii.min.js',
     path: path.resolve(__dirname, 'dist/umd'),
-    library: 'PiiSanitizer',
-    libraryTarget: 'umd',
+    library: {
+      name: 'sanitizePii',
+      type: 'umd',
+      export: 'default',
+    },
     globalObject: 'this',
   },
   optimization: {

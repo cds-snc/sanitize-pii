@@ -32,12 +32,13 @@
     "build:umd": "webpack --mode production",
     "clean": "rm -rf dist || rmdir /s dist 2>nul || true",
     "test": "jest",
+    "test:build": "node tests/build/runner.js",
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage",
     "lint": "eslint src/**/*.ts",
     "lint:fix": "eslint src/**/*.ts --fix",
-    "format": "prettier --write \"src/**/*.{ts,js,json,md}\"",
-    "format:check": "prettier --check \"src/**/*.{ts,js,json,md}\"",
+    "format": "prettier --write \"{src,tests}/**/*.{ts,js,json,md}\"",
+    "format:check": "prettier --check \"{src,tests}/**/*.{ts,js,json,md}\"",
     "prepare": "npm run build"
   },
   "devDependencies": {
@@ -48,6 +49,7 @@
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-prettier": "^5.5.3",
     "jest": "^30.0.0",
+    "jsdom": "^26.1.0",
     "prettier": "^3.6.2",
     "ts-jest": "^29.1.1",
     "ts-loader": "^9.4.4",

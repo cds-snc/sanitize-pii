@@ -1,0 +1,36 @@
+const { JSDOM } = require('jsdom');
+const fs = require('fs');
+const path = require('path');
+
+const umdPath = path.resolve(__dirname, '../../dist/umd/sanitize-pii.min.js');
+const umdCode = fs.readFileSync(umdPath, 'utf8');
+
+const dom = new JSDOM(
+  `
+  <!DOCTYPE html>
+  <html>
+  <head></head>
+  <body>
+    <script>${umdCode}</script>
+  </body>
+  </html>
+`,
+  {
+    runScripts: 'dangerously',
+  }
+);
+
+const { window } = dom;
+
+if (typeof window.sanitizePii !== 'function') {
+  console.error('❌ UMD test failed: sanitizePii not available on window');
+  process.exit(1);
+}
+
+const testText = 'Contact: bob@test.com, Address: 123 Fake St';
+const result = window.sanitizePii(testText);
+
+if (result.includes('bob@test.com') || result.includes('123 Fake St')) {
+  console.error('❌ UMD test failed: PII still visible in browser output');
+  process.exit(1);
+}
