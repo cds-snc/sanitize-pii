@@ -15,9 +15,9 @@ if (
 const sanitizer = new PiiSanitizer({
   replacementTemplate: '[HIDDEN: {name}]',
 });
-const customResult = sanitizer.sanitize('PRI: 987-651-421');
+const customResult = sanitizer.sanitize('SIN: 987-651-421');
 
-if (!customResult.includes('[HIDDEN: pri')) {
+if (!customResult.includes('[HIDDEN: sin')) {
   console.error('❌ Custom template test failed');
   process.exit(1);
 }
