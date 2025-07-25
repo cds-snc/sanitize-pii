@@ -40,12 +40,12 @@ export const defaultPatterns: PiiPattern[] = [
   },
   {
     name: 'sin',
-    regex: /\b\d{3}-?\d{3}-?\d{3}\b/g,
+    regex: /\b\d{3}[\s-]?\d{3}[\s-]?\d{3}\b/g,
     description: 'Social Insurance Number',
   },
   {
     name: 'pri',
-    regex: /\b\d{2,3}-?\d{3}-?\d{3}\b/g,
+    regex: /\b\d{2,3}[\s-]?\d{3}[\s-]?\d{3}\b/g,
     description: 'Personal Record Identifier',
   },
 ];

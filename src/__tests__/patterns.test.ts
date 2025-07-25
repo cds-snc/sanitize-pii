@@ -70,6 +70,7 @@ describe('Default Patterns', () => {
         '012345678',
         '12345678',
         '123-456-789',
+        '123 456 789',
       ];
 
       validPRIs.forEach(pri => {
@@ -105,6 +106,7 @@ describe('Default Patterns', () => {
         '123456789',
         '987-654-321',
         '111222333',
+        '111 222 333',
       ];
 
       validSINs.forEach(sin => {
