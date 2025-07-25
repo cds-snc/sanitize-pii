@@ -7,9 +7,9 @@ webpack.config.*
 # Development and build tools
 .devcontainer/
 .github/
-.eslintrc.*
 .prettierrc*
 .prettierignore
+eslint.config.*
 jest.config.*
 renovate.json
 
