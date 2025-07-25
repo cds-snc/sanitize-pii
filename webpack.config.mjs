@@ -1,6 +1,6 @@
-const path = require('path');
+import path from 'path';
 
-module.exports = {
+export default {
   entry: './src/index.ts',
   mode: 'production',
   module: {
@@ -14,12 +14,18 @@ module.exports = {
   },
   resolve: {
     extensions: ['.tsx', '.ts', '.js'],
+    extensionAlias: {
+      '.js': ['.js', '.ts'],
+    },
   },
   output: {
     filename: 'sanitize-pii.min.js',
-    path: path.resolve(__dirname, 'dist/umd'),
-    library: 'PiiSanitizer',
-    libraryTarget: 'umd',
+    path: path.resolve(process.cwd(), 'dist/umd'),
+    library: {
+      name: 'sanitizePii',
+      type: 'umd',
+      export: 'default',
+    },
     globalObject: 'this',
   },
   optimization: {

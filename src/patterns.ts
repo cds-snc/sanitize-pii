@@ -1,4 +1,4 @@
-import { PiiPattern } from './types';
+import { PiiPattern } from './types.js';
 
 export const defaultPatterns: PiiPattern[] = [
   {

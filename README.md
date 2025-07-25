@@ -4,11 +4,11 @@ TypeScript module for removing personally identifiable information (PII) from te
 
 ## Installation
 
-```bash
+```sh
 npm install @cdssnc/sanitize-pii
 ```
 
-## Quick Start
+## Quick start
 
 ```typescript
 import { sanitizePii, PiiSanitizer } from '@cdssnc/sanitize-pii';
@@ -33,4 +33,17 @@ const sanitizer = new PiiSanitizer({
 const result = sanitizer.sanitize(text);
 console.log(result);
 // Output: "Contact me at ***email*** or call ***phone_number*** with ***account_id***"
+```
+
+## Development
+
+Pull requests run the following, which can also be done locally to make sure everything works as expected:
+
+```sh
+npm ci
+npm test
+npm run lint
+npm run format
+npm run build
+npm run test:build
 ```
