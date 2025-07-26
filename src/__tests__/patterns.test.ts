@@ -134,8 +134,8 @@ describe('Default Patterns', () => {
     });
   });
 
-  describe('address pattern', () => {
-    const addressPattern = defaultPatterns.find(p => p.name === 'address')!;
+  describe('address_en pattern', () => {
+    const addressPattern = defaultPatterns.find(p => p.name === 'address_en')!;
 
     it('should match valid addresses', () => {
       const validAddresses = [
@@ -167,9 +167,43 @@ describe('Default Patterns', () => {
       });
     });
   });
+
+  describe('address_fr pattern', () => {
+    const addressPattern = defaultPatterns.find(p => p.name === 'address_fr')!;
+
+    it('should match valid French addresses', () => {
+      const validAddresses = [
+        '123 Rue de la Paix',
+        '456 Avenue des Champs-Élysées',
+        '789 Boulevard Saint-Germain',
+        '101 Chemin du Moulin',
+        '202 Allée des Fleurs',
+      ];
+
+      validAddresses.forEach(address => {
+        expect(addressPattern.regex.test(address)).toBe(true);
+        addressPattern.regex.lastIndex = 0;
+      });
+    });
+
+    it('should not match invalid French addresses', () => {
+      const invalidAddresses = [
+        'Rue de la Paix 123',
+        '456 Avenue',
+        'Boulevard Saint-Germain 789',
+        'Chemin du Moulin',
+      ];
+
+      invalidAddresses.forEach(address => {
+        expect(addressPattern.regex.test(address)).toBe(false);
+        addressPattern.regex.lastIndex = 0;
+      });
+    });
+  });
+
   describe('passport pattern', () => {
     const passportPattern = defaultPatterns.find(
-      p => p.name === 'canadian_passport'
+      p => p.name === 'passport_canada'
     )!;
 
     it('should match valid Canadian passport numbers', () => {
