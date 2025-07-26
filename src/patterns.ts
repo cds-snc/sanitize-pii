@@ -10,7 +10,7 @@ export const defaultPatterns: PiiPattern[] = [
   {
     name: 'address_fr',
     regex:
-      /\b[\d#-]+[\s-]+(?:rue|rte|avenue|av|boulevard|bd|chemin|ch|route|allée|all|place|pl|voie|v|carré|carre|impasse|imp|quai|qai|passage|pass)\.?[\s-]+(?:des|de\sla|du)?[\s-]?[A-ZÀÂÄÇÉÈÊËÎÏÔÖÙÛÜŸ-]+\b/gi,
+      /\b[\d#-]+[\s-]+(?:rue|rte|avenue|av|boulevard|bd|chemin|ch|route|allée|all|place|pl|voie|v|carré|carre|impasse|imp|quai|qai|passage|pass)\.?[\s-]+(?:des|de\sla|du|d')?[\s-]?[A-ZÀÂÄÇÉÈÊËÎÏÔÖÙÛÜŸ-]+\b/gi,
     description: 'Address (French)',
   },
   {
