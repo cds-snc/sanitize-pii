@@ -63,7 +63,7 @@ describe('PiiSanitizer', () => {
     it('should update replacement template', () => {
       sanitizer.setReplacementTemplate('REMOVED_{name}');
       const result = sanitizer.sanitize('123 Fake St');
-      expect(result).toBe('REMOVED_address');
+      expect(result).toBe('REMOVED_address_en');
     });
   });
 
@@ -79,9 +79,11 @@ describe('PiiSanitizer', () => {
     });
 
     it('should sanitize home addresses', () => {
-      const text = 'Contact me at 123 Fake St for more info';
+      const text = 'Contact me at 123 Fake St or 34 rue Bernard for more info';
       const result = sanitizer.sanitize(text);
-      expect(result).toBe('Contact me at [Redacted: address] for more info');
+      expect(result).toBe(
+        'Contact me at [Redacted: address_en] or [Redacted: address_fr] for more info'
+      );
     });
 
     it('should sanitize multiple phone numbers', () => {
@@ -126,7 +128,7 @@ describe('PiiSanitizer', () => {
         'Call me at (555) 123-4567. My postal code is K1A 0A6 and I live at 123 Main St., Ottawa.';
       const result = sanitizer.sanitize(text);
       expect(result).toBe(
-        'Call me at [Redacted: phone_number]. My postal code is [Redacted: postal_code] and I live at [Redacted: address]., Ottawa.'
+        'Call me at [Redacted: phone_number]. My postal code is [Redacted: postal_code] and I live at [Redacted: address_en]., Ottawa.'
       );
     });
 
@@ -145,7 +147,7 @@ describe('PiiSanitizer', () => {
 
     it('should detect home addresses', () => {
       const result = sanitizer.detectPii('Contact me at 123 Fake Ave');
-      expect(result).toContain('address');
+      expect(result).toContain('address_en');
     });
 
     it('should detect multiple PII types', () => {
