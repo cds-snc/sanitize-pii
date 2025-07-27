@@ -14,9 +14,9 @@ export const defaultPatterns: PiiPattern[] = [
     description: 'Address (French)',
   },
   {
-    name: 'passport_canada',
-    regex: /\b([A-Z]{2}[\s-]?\d{6})\b/g,
-    description: 'Canadian passport',
+    name: 'credit_card',
+    regex: /\b(?:\d{4}[\s-]?){3}\d{3,4}\b/g,
+    description: 'Credit card number',
   },
   {
     name: 'drivers_license_ontario',
@@ -29,9 +29,24 @@ export const defaultPatterns: PiiPattern[] = [
     description: 'Quebec drivers license',
   },
   {
+    name: 'health_card_ontario',
+    regex: /\b\d{4}[\s-]?\d{3}[\s-]?\d{3}[\s-]?[A-Z]{1,2}\b/g,
+    description: 'Ontario health card',
+  },
+  {
+    name: 'health_card_quebec',
+    regex: /\b[A-Z]{4}[\s-]?\d{4}[\s-]?\d{4}\b/g,
+    description: 'Quebec health card',
+  },
+  {
     name: 'ip_address',
     regex: /\b(?:\d{1,3}\.){3}\d{1,3}\b/g,
     description: 'IP address',
+  },
+  {
+    name: 'passport_canada',
+    regex: /\b([A-Z]{2}[\s-]?\d{6})\b/g,
+    description: 'Canadian passport',
   },
   {
     name: 'phone_number',
@@ -53,5 +68,10 @@ export const defaultPatterns: PiiPattern[] = [
     name: 'pri',
     regex: /\b\d{2,3}[\s-]?\d{3}[\s-]?\d{3}\b/g,
     description: 'Personal Record Identifier',
+  },
+  {
+    name: '7+_digit_number', // Catches provincial driver's license and health card numbers
+    regex: /\b\d{7,}\b/g,
+    description: '7 or more digit number',
   },
 ];
