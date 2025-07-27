@@ -1,6 +1,6 @@
 {
 	"name": "sanitize-pii",
-	"image": "mcr.microsoft.com/devcontainers/base:bullseye",
+	"image": "mcr.microsoft.com/devcontainers/base:bullseye@sha256:5d19b08db55d373c87a8dc1e1461a695ac76443ed1daae22afb80e790e39c651",
 	"containerEnv": {
 		"SHELL": "/bin/zsh"
 	},
