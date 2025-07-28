@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.1](https://github.com/cds-snc/sanitize-pii/compare/v1.1.0...v1.1.1) (2025-07-28)
+
+
+### Bug Fixes
+
+* set the registry-url in npm publish workflow ([#19](https://github.com/cds-snc/sanitize-pii/issues/19)) ([e065f19](https://github.com/cds-snc/sanitize-pii/commit/e065f19d3210c89dc40e390141488f72eb7c47b3))
+
 ## [1.1.0](https://github.com/cds-snc/sanitize-pii/compare/v1.0.2...v1.1.0) (2025-07-28)
 
 
