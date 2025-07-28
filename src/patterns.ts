@@ -14,6 +14,12 @@ export const defaultPatterns: PiiPattern[] = [
     description: 'Address (French)',
   },
   {
+    name: 'api_key_gc_notify',
+    regex:
+      /\bgcntfy-[A-Z0-9-]+[0-9A-F]{8}-[0-9A-F]{4}-[0-9A-F]{4}-[0-9A-F]{4}-[0-9A-F]{12}\b/gi,
+    description: 'API key (GC Notify)',
+  },
+  {
     name: 'credit_card',
     regex: /\b(?:\d{4}[\s-]?){3}\d{3,4}\b/g,
     description: 'Credit card number',

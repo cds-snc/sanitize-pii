@@ -436,6 +436,36 @@ describe('Default Patterns', () => {
     });
   });
 
+  describe('api_key_gc_notify pattern', () => {
+    const apiKeyPattern = defaultPatterns.find(
+      p => p.name === 'api_key_gc_notify'
+    )!;
+
+    it('should match valid GC Notify API keys', () => {
+      const validKeys = [
+        'gcntfy-test-e2253c4f-b642-4ef5-a104-f3d823bb2158',
+        'gcntfy-another-name-9e8cada6-6f29-4afb-866c-3d696b60735e',
+        'gcntfy-some-key-name-ae6dd110-78b4-49a0-94b8-748121735882',
+      ];
+      validKeys.forEach(key => {
+        expect(testFullStringMatch(apiKeyPattern.regex, key)).toBe(true);
+      });
+    });
+
+    it('should not match invalid GC Notify API keys', () => {
+      const invalidKeys = [
+        'muffins-gcnotify',
+        'gcntfy-abcdefg',
+        'gcntfy-1234-5678-90ab-cdefg',
+        'notgcntfy-e2253c4f-b642-4ef5-a104-f3d823bb2158',
+      ];
+      invalidKeys.forEach(key => {
+        expect(apiKeyPattern.regex.test(key)).toBe(false);
+        apiKeyPattern.regex.lastIndex = 0;
+      });
+    });
+  });
+
   it('should have all required properties', () => {
     defaultPatterns.forEach(pattern => {
       expect(pattern.name).toBeDefined();
