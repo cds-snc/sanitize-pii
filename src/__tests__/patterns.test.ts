@@ -1,5 +1,10 @@
 import { defaultPatterns } from '../patterns';
 
+const testFullStringMatch = (regex: RegExp, text: string): boolean => {
+  const anchoredRegex = new RegExp(`^${regex.source}$`, regex.flags);
+  return anchoredRegex.test(text);
+};
+
 describe('Default Patterns', () => {
   describe('phone_number pattern', () => {
     const phonePattern = defaultPatterns.find(p => p.name === 'phone_number')!;
@@ -16,8 +21,7 @@ describe('Default Patterns', () => {
       ];
 
       validPhones.forEach(phone => {
-        expect(phonePattern.regex.test(phone)).toBe(true);
-        phonePattern.regex.lastIndex = 0;
+        expect(testFullStringMatch(phonePattern.regex, phone)).toBe(true);
       });
     });
 
@@ -45,8 +49,7 @@ describe('Default Patterns', () => {
       ];
 
       validPostalCodes.forEach(code => {
-        expect(postalPattern.regex.test(code)).toBe(true);
-        postalPattern.regex.lastIndex = 0;
+        expect(testFullStringMatch(postalPattern.regex, code)).toBe(true);
       });
     });
 
@@ -74,8 +77,7 @@ describe('Default Patterns', () => {
       ];
 
       validPRIs.forEach(pri => {
-        expect(priPattern.regex.test(pri)).toBe(true);
-        priPattern.regex.lastIndex = 0;
+        expect(testFullStringMatch(priPattern.regex, pri)).toBe(true);
       });
     });
 
@@ -110,8 +112,7 @@ describe('Default Patterns', () => {
       ];
 
       validSINs.forEach(sin => {
-        expect(sinPattern.regex.test(sin)).toBe(true);
-        sinPattern.regex.lastIndex = 0;
+        expect(testFullStringMatch(sinPattern.regex, sin)).toBe(true);
       });
     });
 
@@ -134,22 +135,21 @@ describe('Default Patterns', () => {
     });
   });
 
-  describe('address pattern', () => {
-    const addressPattern = defaultPatterns.find(p => p.name === 'address')!;
+  describe('address_en pattern', () => {
+    const addressPattern = defaultPatterns.find(p => p.name === 'address_en')!;
 
     it('should match valid addresses', () => {
       const validAddresses = [
         '123 Main St',
-        '456 Elm Avenue.',
+        '456 Elm Avenue',
         '789 Maple Road',
         '101 Pine Boulevard',
         '202 Oak Drive',
-        '#45-303 Cedar Prv.',
+        '45-303 Cedar Prv',
       ];
 
       validAddresses.forEach(address => {
-        expect(addressPattern.regex.test(address)).toBe(true);
-        addressPattern.regex.lastIndex = 0;
+        expect(testFullStringMatch(addressPattern.regex, address)).toBe(true);
       });
     });
 
@@ -167,17 +167,50 @@ describe('Default Patterns', () => {
       });
     });
   });
+
+  describe('address_fr pattern', () => {
+    const addressPattern = defaultPatterns.find(p => p.name === 'address_fr')!;
+
+    it('should match valid French addresses', () => {
+      const validAddresses = [
+        '123 Rue de la Paix',
+        '456 Avenue des Champs-Élysées',
+        '789 Boulevard Saint-Germain',
+        '101 Chemin du Moulin',
+        '202 Allée des Fleurs',
+        "4520-303 Impasse d'Orléans",
+      ];
+
+      validAddresses.forEach(address => {
+        expect(testFullStringMatch(addressPattern.regex, address)).toBe(true);
+      });
+    });
+
+    it('should not match invalid French addresses', () => {
+      const invalidAddresses = [
+        'Rue de la Paix 123',
+        '456 Avenue',
+        'Boulevard Saint-Germain 789',
+        'Chemin du Moulin',
+      ];
+
+      invalidAddresses.forEach(address => {
+        expect(addressPattern.regex.test(address)).toBe(false);
+        addressPattern.regex.lastIndex = 0;
+      });
+    });
+  });
+
   describe('passport pattern', () => {
     const passportPattern = defaultPatterns.find(
-      p => p.name === 'canadian_passport'
+      p => p.name === 'passport_canada'
     )!;
 
     it('should match valid Canadian passport numbers', () => {
       const validPassports = ['AB123456', 'CD 123456', 'EF-123456', 'GH123456'];
 
       validPassports.forEach(passport => {
-        expect(passportPattern.regex.test(passport)).toBe(true);
-        passportPattern.regex.lastIndex = 0;
+        expect(testFullStringMatch(passportPattern.regex, passport)).toBe(true);
       });
     });
 
@@ -209,8 +242,7 @@ describe('Default Patterns', () => {
       ];
 
       validIPs.forEach(ip => {
-        expect(ipPattern.regex.test(ip)).toBe(true);
-        ipPattern.regex.lastIndex = 0;
+        expect(testFullStringMatch(ipPattern.regex, ip)).toBe(true);
       });
     });
 
@@ -237,8 +269,9 @@ describe('Default Patterns', () => {
       ];
 
       validLicenses.forEach(license => {
-        expect(ontarioLicensePattern.regex.test(license)).toBe(true);
-        ontarioLicensePattern.regex.lastIndex = 0;
+        expect(testFullStringMatch(ontarioLicensePattern.regex, license)).toBe(
+          true
+        );
       });
     });
 
@@ -269,8 +302,9 @@ describe('Default Patterns', () => {
       ];
 
       validLicenses.forEach(license => {
-        expect(quebecLicensePattern.regex.test(license)).toBe(true);
-        quebecLicensePattern.regex.lastIndex = 0;
+        expect(testFullStringMatch(quebecLicensePattern.regex, license)).toBe(
+          true
+        );
       });
     });
 
@@ -284,6 +318,120 @@ describe('Default Patterns', () => {
       invalidLicenses.forEach(license => {
         expect(quebecLicensePattern.regex.test(license)).toBe(false);
         quebecLicensePattern.regex.lastIndex = 0;
+      });
+    });
+  });
+
+  describe('health_card_ontario pattern', () => {
+    const ontarioHealthCardPattern = defaultPatterns.find(
+      p => p.name === 'health_card_ontario'
+    )!;
+
+    it('should match valid Ontario health cards', () => {
+      const validCards = ['1234-567-890-AB', '1234 567 890 B', '1234567890C'];
+
+      validCards.forEach(card => {
+        expect(testFullStringMatch(ontarioHealthCardPattern.regex, card)).toBe(
+          true
+        );
+      });
+    });
+
+    it('should not match invalid Ontario health cards', () => {
+      const invalidCards = ['123-456-789-A', '1234-5678-90-B', '1234567890ADD'];
+
+      invalidCards.forEach(card => {
+        expect(ontarioHealthCardPattern.regex.test(card)).toBe(false);
+        ontarioHealthCardPattern.regex.lastIndex = 0;
+      });
+    });
+  });
+
+  describe('health_card_quebec pattern', () => {
+    const quebecHealthCardPattern = defaultPatterns.find(
+      p => p.name === 'health_card_quebec'
+    )!;
+
+    it('should match valid Quebec health cards', () => {
+      const validCards = ['ABCD-1234-5678', 'EFGH 1234 5678', 'IJKL12345678'];
+
+      validCards.forEach(card => {
+        expect(testFullStringMatch(quebecHealthCardPattern.regex, card)).toBe(
+          true
+        );
+      });
+    });
+
+    it('should not match invalid Quebec health cards', () => {
+      const invalidCards = [
+        'ABCD-12345-678',
+        'EFGH 12345 678',
+        'IJKL123456789',
+      ];
+
+      invalidCards.forEach(card => {
+        expect(quebecHealthCardPattern.regex.test(card)).toBe(false);
+        quebecHealthCardPattern.regex.lastIndex = 0;
+      });
+    });
+  });
+
+  describe('credit_card pattern', () => {
+    const creditCardPattern = defaultPatterns.find(
+      p => p.name === 'credit_card'
+    )!;
+
+    it('should match valid credit card numbers', () => {
+      const validCards = [
+        '1234-5678-9012-3456',
+        '1234 5678 9012 3456',
+        '1234567890123456',
+        '1234-5678-9012-345',
+      ];
+      validCards.forEach(card => {
+        expect(testFullStringMatch(creditCardPattern.regex, card)).toBe(true);
+      });
+    });
+
+    it('should not match invalid credit card numbers', () => {
+      const invalidCards = [
+        '1234-5678-9012-34567',
+        '1234 5678 9012 34567',
+        'asdfghjklqwerty',
+        '1234-5678-9012-34',
+      ];
+      invalidCards.forEach(card => {
+        expect(creditCardPattern.regex.test(card)).toBe(false);
+        creditCardPattern.regex.lastIndex = 0;
+      });
+    });
+  });
+
+  describe('7+_digit_number pattern', () => {
+    const sevenDigitPattern = defaultPatterns.find(
+      p => p.name === '7+_digit_number'
+    )!;
+
+    it('should match numbers with 7 or more digits', () => {
+      const validNumbers = [
+        '1234567',
+        '12345678',
+        '1234567890',
+        '9876543210',
+        '1234567890123',
+      ];
+
+      validNumbers.forEach(num => {
+        expect(testFullStringMatch(sevenDigitPattern.regex, num)).toBe(true);
+      });
+    });
+
+    it('should not match numbers with less than 7 digits', () => {
+      const invalidNumbers = ['123456', '12345', '1234', '123'];
+
+      invalidNumbers.forEach(num => {
+        expect(sevenDigitPattern.regex.test(num)).toBe(false);
+        sevenDigitPattern.regex.lastIndex = 0;
       });
     });
   });

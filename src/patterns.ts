@@ -2,15 +2,21 @@ import { PiiPattern } from './types.js';
 
 export const defaultPatterns: PiiPattern[] = [
   {
-    name: 'address',
+    name: 'address_en',
     regex:
-      /\b[\d#-]+[\s-]+[A-Z\s-]+(?:street|st|avenue|ave|road|rd|boulevard|blvd|drive|dr|lane|ln|court|ct|place|pl|way|crescent|cres|circle|cir|parkway|pkwy|terrace|ter|square|sq|trail|trl|close|cl|grove|grv|heights|hts|hill|park|gardens|gdns|manor|mnr|estates|est|valley|vly|view|vw|point|pt|ridge|rdg|bay|cove|cv|mews|row|common|green|grn|landing|lndg|crossing|xing|glen|gln|meadow|mdw|pass|run|bend|curve|curv|fork|frk|gap|hollow|holw|knoll|knl|lock|lck|mill|ml|orchard|orch|path|pth|pine|pne|pond|shoal|shl|shore|shr|spring|spg|summit|smt|trace|trce|track|trak|turnpike|tpke|walk|wlk|woods|wds|private|prv)\.?\b/gi,
-    description: 'Address',
+      /\b[\d-]+[\s-]+[A-Z-]+[\s-]+(?:street|st|avenue|ave|road|rd|boulevard|blvd|drive|dr|lane|ln|court|ct|place|pl|way|crescent|cres|circle|cir|parkway|pkwy|terrace|ter|square|sq|trail|trl|close|cl|grove|grv|heights|hts|hill|park|gardens|gdns|manor|mnr|estates|est|valley|vly|view|vw|point|pt|ridge|rdg|bay|cove|cv|mews|row|common|green|grn|landing|lndg|crossing|xing|glen|gln|meadow|mdw|pass|run|bend|curve|curv|fork|frk|gap|hollow|holw|knoll|knl|lock|lck|mill|ml|orchard|orch|path|pth|pine|pne|pond|shoal|shl|shore|shr|spring|spg|summit|smt|trace|trce|track|trak|turnpike|tpke|walk|wlk|woods|wds|private|prv)\b/gi,
+    description: 'Address (English)',
   },
   {
-    name: 'canadian_passport',
-    regex: /\b([A-Z]{2}[\s-]?\d{6})\b/g,
-    description: 'Canadian passport',
+    name: 'address_fr',
+    regex:
+      /\b[\d-]+[\s-]+(?:rue|rte|avenue|av|boulevard|bd|chemin|ch|route|allée|all|place|pl|voie|v|carré|carre|impasse|imp|quai|qai|passage|pass)\.?[\s-]+(?:des|de\sla|du|d')?[\s-]?[A-ZÀÂÄÇÉÈÊËÎÏÔÖÙÛÜŸ-]+\b/gi,
+    description: 'Address (French)',
+  },
+  {
+    name: 'credit_card',
+    regex: /\b(?:\d{4}[\s-]?){3}\d{3,4}\b/g,
+    description: 'Credit card number',
   },
   {
     name: 'drivers_license_ontario',
@@ -23,9 +29,24 @@ export const defaultPatterns: PiiPattern[] = [
     description: 'Quebec drivers license',
   },
   {
+    name: 'health_card_ontario',
+    regex: /\b\d{4}[\s-]?\d{3}[\s-]?\d{3}[\s-]?[A-Z]{1,2}\b/g,
+    description: 'Ontario health card',
+  },
+  {
+    name: 'health_card_quebec',
+    regex: /\b[A-Z]{4}[\s-]?\d{4}[\s-]?\d{4}\b/g,
+    description: 'Quebec health card',
+  },
+  {
     name: 'ip_address',
     regex: /\b(?:\d{1,3}\.){3}\d{1,3}\b/g,
     description: 'IP address',
+  },
+  {
+    name: 'passport_canada',
+    regex: /\b([A-Z]{2}[\s-]?\d{6})\b/g,
+    description: 'Canadian passport',
   },
   {
     name: 'phone_number',
@@ -47,5 +68,10 @@ export const defaultPatterns: PiiPattern[] = [
     name: 'pri',
     regex: /\b\d{2,3}[\s-]?\d{3}[\s-]?\d{3}\b/g,
     description: 'Personal Record Identifier',
+  },
+  {
+    name: '7+_digit_number', // Catches provincial driver's license and health card numbers
+    regex: /\b\d{7,}\b/g,
+    description: '7 or more digit number',
   },
 ];

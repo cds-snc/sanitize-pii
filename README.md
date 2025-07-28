@@ -1,6 +1,6 @@
 # Sanitize PII
 
-TypeScript module for removing personally identifiable information (PII) from text. 
+TypeScript module for removing personally identifiable information (PII) from text.  The PII this module removes by default can be seen in [`src/patterns.ts`](./src/patterns.ts).
 
 ## Installation
 
