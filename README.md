@@ -35,9 +35,20 @@ console.log(result);
 // Output: "Contact me at ***phone_number*** with ***account_id***"
 ```
 
+You can also use the module directly in a browser with the following CDN:
+```html
+<script src="https://cdn.jsdelivr.net/npm/@cdssnc/sanitize-pii@1.1.1/dist/umd/sanitize-pii.min.js"></script>
+<script>
+  const textareas = document.querySelectorAll('textarea');
+  textareas.forEach(textarea => {
+    textarea.value = sanitizePii(textarea.value);
+  });
+</script>
+```
+
 ## Development
 
-Pull requests run the following, which can also be done locally to make sure everything works as expected:
+A [devcontainer](https://docs.github.com/en/codespaces/setting-up-your-project-for-codespaces/adding-a-dev-container-configuration/introduction-to-dev-containers) has been provided to create a local or Codespaces dev environment.  If you submit a pull request, you can run the following to make sure everything works as expected:
 
 ```sh
 npm ci

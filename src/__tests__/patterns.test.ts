@@ -18,6 +18,7 @@ describe('Default Patterns', () => {
         '+1-555-123-4567',
         '+1 555 123 4567',
         '1-555-123-4567',
+        '1-555_123_4567',
       ];
 
       validPhones.forEach(phone => {
@@ -46,6 +47,8 @@ describe('Default Patterns', () => {
         'M5V3A8',
         'k1a 0a6',
         'H3Z2Y7',
+        'k1a.0a6',
+        'H3Z_2Y7',
       ];
 
       validPostalCodes.forEach(code => {
@@ -74,6 +77,8 @@ describe('Default Patterns', () => {
         '12345678',
         '123-456-789',
         '123 456 789',
+        '123.456.789',
+        '123_456_789',
       ];
 
       validPRIs.forEach(pri => {
@@ -109,6 +114,8 @@ describe('Default Patterns', () => {
         '987-654-321',
         '111222333',
         '111 222 333',
+        '123.456.789',
+        '123_456_789',
       ];
 
       validSINs.forEach(sin => {
@@ -207,7 +214,14 @@ describe('Default Patterns', () => {
     )!;
 
     it('should match valid Canadian passport numbers', () => {
-      const validPassports = ['AB123456', 'CD 123456', 'EF-123456', 'GH123456'];
+      const validPassports = [
+        'AB123456',
+        'CD 123456',
+        'EF-123456',
+        'GH123456',
+        'EF.123456',
+        'EF_123456',
+      ];
 
       validPassports.forEach(passport => {
         expect(testFullStringMatch(passportPattern.regex, passport)).toBe(true);
@@ -256,6 +270,162 @@ describe('Default Patterns', () => {
     });
   });
 
+  describe('drivers_license_alberta pattern', () => {
+    const albertaLicensePattern = defaultPatterns.find(
+      p => p.name === 'drivers_license_alberta'
+    )!;
+
+    it('should match valid Alberta drivers licenses', () => {
+      const validLicenses = [
+        '123456-789',
+        '123456 789',
+        '123456.789',
+        '123456_789',
+        '987654-321',
+        '000000-000',
+      ];
+
+      validLicenses.forEach(license => {
+        expect(testFullStringMatch(albertaLicensePattern.regex, license)).toBe(
+          true
+        );
+      });
+    });
+
+    it('should not match invalid Alberta drivers licenses', () => {
+      const invalidLicenses = [
+        '12345-789',
+        '1234567-789',
+        '123456-78',
+        '123456-7890',
+        'abc456-789',
+        '123456789',
+      ];
+
+      invalidLicenses.forEach(license => {
+        expect(albertaLicensePattern.regex.test(license)).toBe(false);
+        albertaLicensePattern.regex.lastIndex = 0;
+      });
+    });
+  });
+
+  describe('drivers_license_manitoba pattern', () => {
+    const manitobaLicensePattern = defaultPatterns.find(
+      p => p.name === 'drivers_license_manitoba'
+    )!;
+
+    it('should match valid Manitoba drivers licenses', () => {
+      const validLicenses = [
+        'AB-CD-EF-G123HI',
+        'AB CD EF G123HI',
+        'AB.CD.EF.G123HI',
+        'AB_CD_EF_G123HI',
+      ];
+
+      validLicenses.forEach(license => {
+        expect(testFullStringMatch(manitobaLicensePattern.regex, license)).toBe(
+          true
+        );
+      });
+    });
+
+    it('should not match invalid Manitoba drivers licenses', () => {
+      const invalidLicenses = [
+        'A-CD-EF-G123HI',
+        'AB-C-EF-G123HI',
+        'AB-CD-E-G123HI',
+        'AB-CD-EF-GH123HI',
+        'AB-CD-EF-G12HI',
+        'AB-CD-EF-G1234HI',
+        'AB-CD-EF-G123H',
+        'AB-CD-EF-G123HIJ',
+        '12-34-56-789012',
+      ];
+
+      invalidLicenses.forEach(license => {
+        expect(manitobaLicensePattern.regex.test(license)).toBe(false);
+        manitobaLicensePattern.regex.lastIndex = 0;
+      });
+    });
+  });
+
+  describe('drivers_license_newfoundland pattern', () => {
+    const newfoundlandLicensePattern = defaultPatterns.find(
+      p => p.name === 'drivers_license_newfoundland'
+    )!;
+
+    it('should match valid Newfoundland drivers licenses', () => {
+      const validLicenses = [
+        'A123456789',
+        'B987654321',
+        'C000000000',
+        'Z999999999',
+      ];
+
+      validLicenses.forEach(license => {
+        expect(
+          testFullStringMatch(newfoundlandLicensePattern.regex, license)
+        ).toBe(true);
+      });
+    });
+
+    it('should not match invalid Newfoundland drivers licenses', () => {
+      const invalidLicenses = [
+        '1123456789',
+        'A12345678',
+        'A1234567890',
+        'AB123456789',
+      ];
+
+      invalidLicenses.forEach(license => {
+        expect(newfoundlandLicensePattern.regex.test(license)).toBe(false);
+        newfoundlandLicensePattern.regex.lastIndex = 0;
+      });
+    });
+  });
+
+  describe('drivers_license_nova_scotia pattern', () => {
+    const novascotiaLicensePattern = defaultPatterns.find(
+      p => p.name === 'drivers_license_nova_scotia'
+    )!;
+
+    it('should match valid Nova Scotia drivers licenses', () => {
+      const validLicenses = [
+        'A-123456789',
+        'AB-123456789',
+        'ABC-123456789',
+        'ABCD-123456789',
+        'ABCDE-123456789',
+        'A 123456789',
+        'AB 123456789',
+        'A.123456789',
+        'A_123456789',
+        'A123456789',
+      ];
+
+      validLicenses.forEach(license => {
+        expect(
+          testFullStringMatch(novascotiaLicensePattern.regex, license)
+        ).toBe(true);
+      });
+    });
+
+    it('should not match invalid Nova Scotia drivers licenses', () => {
+      const invalidLicenses = [
+        'ABCDEF-123456789',
+        'A-12345678',
+        'A-1234567890',
+        '1-123456789',
+        'A-12345678a',
+      ];
+
+      invalidLicenses.forEach(license => {
+        expect(novascotiaLicensePattern.regex.test(license)).toBe(false);
+        novascotiaLicensePattern.regex.lastIndex = 0;
+      });
+    });
+  });
+
   describe('drivers_license_ontario pattern', () => {
     const ontarioLicensePattern = defaultPatterns.find(
       p => p.name === 'drivers_license_ontario'
@@ -264,8 +434,10 @@ describe('Default Patterns', () => {
     it('should match valid Ontario drivers licenses', () => {
       const validLicenses = [
         'A1234-56789-01234',
+        'A1234.56789.01234',
         'B56781234567890',
         'A1234 56789 01234',
+        'A1234_56789_01234',
       ];
 
       validLicenses.forEach(license => {
@@ -299,6 +471,8 @@ describe('Default Patterns', () => {
         'A1234-567890-01',
         'B567812345602',
         'A1234 567890 01',
+        'A1234.567890.01',
+        'A1234_567890_01',
       ];
 
       validLicenses.forEach(license => {
@@ -318,6 +492,158 @@ describe('Default Patterns', () => {
       invalidLicenses.forEach(license => {
         expect(quebecLicensePattern.regex.test(license)).toBe(false);
         quebecLicensePattern.regex.lastIndex = 0;
+      });
+    });
+  });
+
+  describe('health_card_alberta pattern', () => {
+    const albertaHealthCardPattern = defaultPatterns.find(
+      p => p.name === 'health_card_alberta'
+    )!;
+
+    it('should match valid Alberta health cards', () => {
+      const validCards = [
+        '12345-6789',
+        '12345 6789',
+        '12345.6789',
+        '12345_6789',
+        '98765-4321',
+        '00000-0000',
+      ];
+
+      validCards.forEach(card => {
+        expect(testFullStringMatch(albertaHealthCardPattern.regex, card)).toBe(
+          true
+        );
+      });
+    });
+
+    it('should not match invalid Alberta health cards', () => {
+      const invalidCards = [
+        '1234-6789',
+        '123456-6789',
+        '12345-678',
+        '12345-67890',
+        'abcde-6789',
+        '123456789',
+      ];
+
+      invalidCards.forEach(card => {
+        expect(albertaHealthCardPattern.regex.test(card)).toBe(false);
+        albertaHealthCardPattern.regex.lastIndex = 0;
+      });
+    });
+  });
+
+  describe('health_card_newfoundland pattern', () => {
+    const newfoundlandHealthCardPattern = defaultPatterns.find(
+      p => p.name === 'health_card_newfoundland'
+    )!;
+
+    it('should match valid Newfoundland health cards', () => {
+      const validCards = [
+        '123-456-789-012',
+        '123 456 789 012',
+        '123.456.789.012',
+        '123_456_789_012',
+        '987-654-321-098',
+        '000-000-000-000',
+      ];
+
+      validCards.forEach(card => {
+        expect(
+          testFullStringMatch(newfoundlandHealthCardPattern.regex, card)
+        ).toBe(true);
+      });
+    });
+
+    it('should not match invalid Newfoundland health cards', () => {
+      const invalidCards = [
+        '12-456-789-012',
+        '1234-456-789-012',
+        '123-45-789-012',
+        '123-4567-789-012',
+        '123-456-78-012',
+        '123-456-7890-012',
+        '123-456-789-01',
+        '123-456-789-0123',
+        'abc-def-ghi-jkl',
+      ];
+
+      invalidCards.forEach(card => {
+        expect(newfoundlandHealthCardPattern.regex.test(card)).toBe(false);
+        newfoundlandHealthCardPattern.regex.lastIndex = 0;
+      });
+    });
+  });
+
+  describe('health_card_nova_scotia pattern', () => {
+    const novascotiaHealthCardPattern = defaultPatterns.find(
+      p => p.name === 'health_card_nova_scotia'
+    )!;
+
+    it('should match valid Nova Scotia health cards', () => {
+      const validCards = [
+        '1234-567-890',
+        '1234 567 890',
+        '1234.567.890',
+        '1234_567_890',
+        '9876-543-210',
+        '0000-000-000',
+      ];
+
+      validCards.forEach(card => {
+        expect(
+          testFullStringMatch(novascotiaHealthCardPattern.regex, card)
+        ).toBe(true);
+      });
+    });
+
+    it('should not match invalid Nova Scotia health cards', () => {
+      const invalidCards = [
+        '123-567-890',
+        '12345-567-890',
+        '1234-56-890',
+        '1234-5678-890',
+        '1234-567-89',
+        '1234-567-8901',
+        'abcd-efg-hij',
+      ];
+
+      invalidCards.forEach(card => {
+        expect(novascotiaHealthCardPattern.regex.test(card)).toBe(false);
+        novascotiaHealthCardPattern.regex.lastIndex = 0;
+      });
+    });
+  });
+
+  describe('health_card_nwt pattern', () => {
+    const nwtHealthCardPattern = defaultPatterns.find(
+      p => p.name === 'health_card_nwt'
+    )!;
+
+    it('should match valid Northwest Territories health cards', () => {
+      const validCards = ['A1234567', 'B9876543', 'C0000000', 'Z9999999'];
+
+      validCards.forEach(card => {
+        expect(testFullStringMatch(nwtHealthCardPattern.regex, card)).toBe(
+          true
+        );
+      });
+    });
+
+    it('should not match invalid Northwest Territories health cards', () => {
+      const invalidCards = [
+        '1A1234567',
+        'A123456',
+        'A12345678',
+        'AB1234567',
+        'A123456A',
+      ];
+
+      invalidCards.forEach(card => {
+        expect(nwtHealthCardPattern.regex.test(card)).toBe(false);
+        nwtHealthCardPattern.regex.lastIndex = 0;
       });
     });
   });
@@ -462,6 +788,66 @@ describe('Default Patterns', () => {
       invalidKeys.forEach(key => {
         expect(apiKeyPattern.regex.test(key)).toBe(false);
         apiKeyPattern.regex.lastIndex = 0;
+      });
+    });
+  });
+
+  describe('po_box pattern', () => {
+    const poBoxPattern = defaultPatterns.find(p => p.name === 'po_box')!;
+
+    it('should match valid PO Box addresses', () => {
+      const validPOBoxes = [
+        'P.O. BOX 123',
+        'P.O.BOX 456',
+        'P O BOX 789',
+        'P.O. BOX 202',
+        'PO-BOX 303',
+      ];
+
+      validPOBoxes.forEach(box => {
+        expect(testFullStringMatch(poBoxPattern.regex, box)).toBe(true);
+      });
+    });
+
+    it('should not match invalid PO Box addresses', () => {
+      const invalidPOBoxes = ['BOX 123', 'P.O. 456', 'P BOX 789', 'P.O.BOX'];
+
+      invalidPOBoxes.forEach(box => {
+        expect(poBoxPattern.regex.test(box)).toBe(false);
+        poBoxPattern.regex.lastIndex = 0;
+      });
+    });
+  });
+
+  describe('bank_account_canada pattern', () => {
+    const bankAccountPattern = defaultPatterns.find(
+      p => p.name === 'bank_account_canada'
+    )!;
+
+    it('should match valid Canadian bank account numbers', () => {
+      const validAccounts = [
+        '12345-678-9012345',
+        '12345 678 90123456',
+        '12345.678.901234567',
+        '12345_678_9012345678',
+        '12345-678-901234567890',
+      ];
+      validAccounts.forEach(account => {
+        expect(testFullStringMatch(bankAccountPattern.regex, account)).toBe(
+          true
+        );
+      });
+    });
+
+    it('should not match invalid Canadian bank account numbers', () => {
+      const invalidAccounts = [
+        '1234-567-89012345678',
+        '12345678901234567890',
+        '12345-678-9012345678901',
+      ];
+      invalidAccounts.forEach(account => {
+        expect(bankAccountPattern.regex.test(account)).toBe(false);
+        bankAccountPattern.regex.lastIndex = 0;
       });
     });
   });
