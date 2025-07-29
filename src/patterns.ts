@@ -20,6 +20,11 @@ export const defaultPatterns: PiiPattern[] = [
     description: 'API key (GC Notify)',
   },
   {
+    name: 'bank_account_canada',
+    regex: /\b\d{5}[-_.\s]{1}\d{3}[-_.\s]{1}\d{7,12}\b/g,
+    description: 'Bank account number (Canada)',
+  },
+  {
     name: 'credit_card',
     regex: /\b(?:\d{4}[-_.\s]?){3}\d{3,4}\b/g,
     description: 'Credit card number',

@@ -819,6 +819,39 @@ describe('Default Patterns', () => {
     });
   });
 
+  describe('bank_account_canada pattern', () => {
+    const bankAccountPattern = defaultPatterns.find(
+      p => p.name === 'bank_account_canada'
+    )!;
+
+    it('should match valid Canadian bank account numbers', () => {
+      const validAccounts = [
+        '12345-678-9012345',
+        '12345 678 90123456',
+        '12345.678.901234567',
+        '12345_678_9012345678',
+        '12345-678-901234567890',
+      ];
+      validAccounts.forEach(account => {
+        expect(testFullStringMatch(bankAccountPattern.regex, account)).toBe(
+          true
+        );
+      });
+    });
+
+    it('should not match invalid Canadian bank account numbers', () => {
+      const invalidAccounts = [
+        '1234-567-89012345678',
+        '12345678901234567890',
+        '12345-678-9012345678901',
+      ];
+      invalidAccounts.forEach(account => {
+        expect(bankAccountPattern.regex.test(account)).toBe(false);
+        bankAccountPattern.regex.lastIndex = 0;
+      });
+    });
+  });
+
   it('should have all required properties', () => {
     defaultPatterns.forEach(pattern => {
       expect(pattern.name).toBeDefined();
