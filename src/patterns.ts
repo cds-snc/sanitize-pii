@@ -21,27 +21,67 @@ export const defaultPatterns: PiiPattern[] = [
   },
   {
     name: 'credit_card',
-    regex: /\b(?:\d{4}[\s-]?){3}\d{3,4}\b/g,
+    regex: /\b(?:\d{4}[-_.\s]?){3}\d{3,4}\b/g,
     description: 'Credit card number',
   },
   {
+    name: 'drivers_license_alberta',
+    regex: /\b\d{6}[-_.\s]{1}\d{3}\b/gi,
+    description: 'Alberta drivers license',
+  },
+  {
+    name: 'drivers_license_manitoba',
+    regex: /\b(?:[A-Z]{2}[-_.\s]{1}){3}[A-Z]{1}\d{3}[A-Z]{2}\b/gi,
+    description: 'Manitoba drivers license',
+  },
+  {
+    name: 'drivers_license_newfoundland',
+    regex: /\b[A-Z]{1}\d{9}\b/gi,
+    description: 'Newfoundland drivers license',
+  },
+  {
+    name: 'drivers_license_nova_scotia',
+    regex: /\b[A-Z\s]{1,5}[-_.\s]?\d{9}\b/gi,
+    description: 'Nova Scotia drivers license',
+  },
+  {
     name: 'drivers_license_ontario',
-    regex: /\b[A-Z]\d{4}[\s-]?\d{5}[\s-]?\d{5}\b/gi,
+    regex: /\b[A-Z]\d{4}[-_.\s]?\d{5}[-_.\s]?\d{5}\b/gi,
     description: 'Ontario drivers license',
   },
   {
     name: 'drivers_license_quebec',
-    regex: /\b[A-Z]\d{4}[\s-]?\d{6}[\s-]?\d{2}\b/gi,
+    regex: /\b[A-Z]\d{4}[-_.\s]?\d{6}[-_.\s]?\d{2}\b/gi,
     description: 'Quebec drivers license',
   },
   {
+    name: 'health_card_alberta',
+    regex: /\b\d{5}[-_.\s]{1}\d{4}\b/gi,
+    description: 'Alberta health card',
+  },
+  {
+    name: 'health_card_newfoundland',
+    regex: /\b(?:\d{3}[-_.\s]{1}){3}\d{3}\b/gi,
+    description: 'Newfoundland health card',
+  },
+  {
+    name: 'health_card_nova_scotia',
+    regex: /\b\d{4}[-_.\s]{1}\d{3}[-_.\s]{1}\d{3}\b/gi,
+    description: 'Nova Scotia health card',
+  },
+  {
+    name: 'health_card_nwt',
+    regex: /\b[A-Z]\d{7}\b/gi,
+    description: 'Northwest Territories health card',
+  },
+  {
     name: 'health_card_ontario',
-    regex: /\b\d{4}[\s-]?\d{3}[\s-]?\d{3}[\s-]?[A-Z]{1,2}\b/g,
+    regex: /\b\d{4}[-_.\s]?\d{3}[-_.\s]?\d{3}[-_.\s]?[A-Z]{1,2}\b/g,
     description: 'Ontario health card',
   },
   {
     name: 'health_card_quebec',
-    regex: /\b[A-Z]{4}[\s-]?\d{4}[\s-]?\d{4}\b/g,
+    regex: /\b[A-Z]{4}[-_.\s]?\d{4}[-_.\s]?\d{4}\b/g,
     description: 'Quebec health card',
   },
   {
@@ -51,28 +91,33 @@ export const defaultPatterns: PiiPattern[] = [
   },
   {
     name: 'passport_canada',
-    regex: /\b([A-Z]{2}[\s-]?\d{6})\b/g,
+    regex: /\b([A-Z]{2}[-_.\s]?\d{6})\b/g,
     description: 'Canadian passport',
   },
   {
     name: 'phone_number',
     regex:
-      /(?:\+?1[-.\s]?)?\(?([0-9]{3})\)?[-.\s]?([0-9]{3})[-.\s]?([0-9]{4})\b/g,
+      /(?:\+?1[-_.\s]?)?\(?([0-9]{3})\)?[-_.\s]?([0-9]{3})[-_.\s]?([0-9]{4})\b/g,
     description: 'North American phone number',
   },
   {
+    name: 'po_box',
+    regex: /\bP[-_.\s]*O[-_.\s]*BOX[-_.\s]*\d+\b/gi,
+    description: 'PO Box',
+  },
+  {
     name: 'postal_code',
-    regex: /\b[A-Z]\d[A-Z][\s-]?\d[A-Z]\d\b/gi,
+    regex: /\b[A-Z]\d[A-Z][-_.\s]?\d[A-Z]\d\b/gi,
     description: 'Postal code',
   },
   {
     name: 'sin',
-    regex: /\b\d{3}[\s-]?\d{3}[\s-]?\d{3}\b/g,
+    regex: /\b(:?\d{3}[-_.\s]?){3}\b/g,
     description: 'Social Insurance Number',
   },
   {
     name: 'pri',
-    regex: /\b\d{2,3}[\s-]?\d{3}[\s-]?\d{3}\b/g,
+    regex: /\b\d{2,3}[-_.\s]?\d{3}[-_.\s]?\d{3}\b/g,
     description: 'Personal Record Identifier',
   },
   {
