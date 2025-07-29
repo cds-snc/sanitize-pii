@@ -16,7 +16,7 @@ export const defaultPatterns: PiiPattern[] = [
   {
     name: 'api_key_gc_notify',
     regex:
-      /\bgcntfy-[A-Z0-9-]+[0-9A-F]{8}-[0-9A-F]{4}-[0-9A-F]{4}-[0-9A-F]{4}-[0-9A-F]{12}\b/gi,
+      /\bgcntfy-[A-Z0-9-_]+-[0-9A-F]{8}-[0-9A-F]{4}-[0-9A-F]{4}-[0-9A-F]{4}-[0-9A-F]{12}\b/gi,
     description: 'API key (GC Notify)',
   },
   {
