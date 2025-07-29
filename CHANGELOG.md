@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.1](https://github.com/cds-snc/sanitize-pii/compare/v1.2.0...v1.2.1) (2025-07-29)
+
+
+### Bug Fixes
+
+* catch Notify API key with underscores ([#24](https://github.com/cds-snc/sanitize-pii/issues/24)) ([f205742](https://github.com/cds-snc/sanitize-pii/commit/f205742fe101f951d99b8927905aabebf6ebfffa))
+
 ## [1.2.0](https://github.com/cds-snc/sanitize-pii/compare/v1.1.1...v1.2.0) (2025-07-29)
 
 
