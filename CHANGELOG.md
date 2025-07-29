@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.2.0](https://github.com/cds-snc/sanitize-pii/compare/v1.1.1...v1.2.0) (2025-07-29)
+
+
+### Features
+
+* add pattern for GC Notify API key ([#21](https://github.com/cds-snc/sanitize-pii/issues/21)) ([464fe7a](https://github.com/cds-snc/sanitize-pii/commit/464fe7ae68103036bca3ee7093630956da8b3f18))
+* add provincial drivers licenses and health cards ([#23](https://github.com/cds-snc/sanitize-pii/issues/23)) ([305c849](https://github.com/cds-snc/sanitize-pii/commit/305c84951fbed6f9a3e63e397d8aa68f8cbb7fd3))
+
 ## [1.1.1](https://github.com/cds-snc/sanitize-pii/compare/v1.1.0...v1.1.1) (2025-07-28)
 
 
