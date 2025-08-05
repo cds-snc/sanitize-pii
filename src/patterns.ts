@@ -46,7 +46,7 @@ export const defaultPatterns: PiiPattern[] = [
   },
   {
     name: 'drivers_license_nova_scotia',
-    regex: /\b[A-Z\s]{1,5}[-_.\s]?\d{9}\b/gi,
+    regex: /\b[A-Z\s]{1,5}[-_.]?\d{9}\b/gi,
     description: 'Nova Scotia drivers license',
   },
   {
