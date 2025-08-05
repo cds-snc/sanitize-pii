@@ -6,6 +6,7 @@ on:
     - published
 
 permissions:
+  id-token: write
   contents: read
 
 jobs:
@@ -23,10 +24,20 @@ jobs:
           cache: npm
           registry-url: https://registry.npmjs.org/
 
+      - name: Update npm
+        run: npm install -g npm@latest
+
       - name: Install dependencies
         run: npm ci
 
+      - name: Run tests
+        run: npm test
+
+      - name: Build application
+        run: npm run build
+
+      - name: Run build tests
+        run: npm run test:build
+
       - name: Publish package
         run: npm publish
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NODE_AUTH_TOKEN }}
