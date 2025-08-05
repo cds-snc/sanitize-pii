@@ -91,11 +91,13 @@ export class PiiSanitizer {
     }
 
     const detectedPatterns: string[] = [];
+    let remainingText = text;
 
     for (const pattern of this.patterns) {
       const regex = new RegExp(pattern.regex.source, pattern.regex.flags);
-      if (regex.test(text)) {
+      if (regex.test(remainingText)) {
         detectedPatterns.push(pattern.name);
+        remainingText = remainingText.replace(pattern.regex, '');
       }
     }
 
@@ -115,9 +117,16 @@ export const defaultSanitizer = new PiiSanitizer();
  * @returns The sanitized text
  */
 export function sanitizePii(text: string, options?: SanitizeOptions): string {
+  let sanitizer;
   if (options) {
-    const sanitizer = new PiiSanitizer(options);
+    sanitizer = new PiiSanitizer(options);
+  } else {
+    sanitizer = defaultSanitizer;
+  }
+
+  if (options?.detectOnly) {
+    return sanitizer.detectPii(text).join(',');
+  } else {
     return sanitizer.sanitize(text);
   }
-  return defaultSanitizer.sanitize(text);
 }

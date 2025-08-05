@@ -211,4 +211,12 @@ describe('sanitizePii convenience function', () => {
     });
     expect(result).toBe('test@example.com and [Redacted: secret]');
   });
+
+  it('should detect PII without sanitizing', () => {
+    const result = sanitizePii(
+      'Phone: 1-123-456-7890 Address: 4352 rue Portage SIN: 123456789',
+      { detectOnly: true }
+    );
+    expect(result).toBe('address_fr,phone_number,sin');
+  });
 });
