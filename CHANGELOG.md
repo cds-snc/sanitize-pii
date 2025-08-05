@@ -1,5 +1,19 @@
 # Changelog
 
+## [1.2.2](https://github.com/cds-snc/sanitize-pii/compare/v1.2.1...v1.2.2) (2025-08-05)
+
+
+### Bug Fixes
+
+* Nova Scotia drivers license pattern ([#30](https://github.com/cds-snc/sanitize-pii/issues/30)) ([2857cc5](https://github.com/cds-snc/sanitize-pii/commit/2857cc5013ecdfa115a603b449504db403aa782d))
+
+
+### Miscellaneous Chores
+
+* **deps:** lock file maintenance ([#28](https://github.com/cds-snc/sanitize-pii/issues/28)) ([8c73d4c](https://github.com/cds-snc/sanitize-pii/commit/8c73d4cbfc6a1c41ccaa57d024658dabc5294d94))
+* **deps:** update github/codeql-action action to v3.29.4 ([#26](https://github.com/cds-snc/sanitize-pii/issues/26)) ([236cc4d](https://github.com/cds-snc/sanitize-pii/commit/236cc4d32279601d1002279f32852135f09efc23))
+* switch to OIDC publishing ([#27](https://github.com/cds-snc/sanitize-pii/issues/27)) ([ea70915](https://github.com/cds-snc/sanitize-pii/commit/ea709155f4d72cede94b30ff9c181e6584abeb9b))
+
 ## [1.2.1](https://github.com/cds-snc/sanitize-pii/compare/v1.2.0...v1.2.1) (2025-07-29)
 
 
