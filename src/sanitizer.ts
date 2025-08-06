@@ -83,19 +83,25 @@ export class PiiSanitizer {
   /**
    * Check if text contains any PII without sanitizing it
    * @param text The text to check
-   * @returns Array of pattern names that matched
+   * @returns Array of objects containing pattern names and matched strings
    */
-  detectPii(text: string): string[] {
+  detectPii(text: string): { pattern: string; match: string }[] {
     if (!text || typeof text !== 'string') {
       return [];
     }
 
-    const detectedPatterns: string[] = [];
+    const detectedPatterns: { pattern: string; match: string }[] = [];
+    let remainingText = text;
 
     for (const pattern of this.patterns) {
       const regex = new RegExp(pattern.regex.source, pattern.regex.flags);
-      if (regex.test(text)) {
-        detectedPatterns.push(pattern.name);
+      const match = remainingText.match(regex);
+      if (match) {
+        detectedPatterns.push({
+          pattern: pattern.name,
+          match: match[0],
+        });
+        remainingText = remainingText.replace(pattern.regex, '');
       }
     }
 
@@ -115,9 +121,16 @@ export const defaultSanitizer = new PiiSanitizer();
  * @returns The sanitized text
  */
 export function sanitizePii(text: string, options?: SanitizeOptions): string {
+  let sanitizer;
   if (options) {
-    const sanitizer = new PiiSanitizer(options);
+    sanitizer = new PiiSanitizer(options);
+  } else {
+    sanitizer = defaultSanitizer;
+  }
+
+  if (options?.detectOnly) {
+    return JSON.stringify(sanitizer.detectPii(text));
+  } else {
     return sanitizer.sanitize(text);
   }
-  return defaultSanitizer.sanitize(text);
 }

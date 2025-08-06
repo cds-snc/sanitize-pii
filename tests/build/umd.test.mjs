@@ -28,8 +28,14 @@ if (typeof window.sanitizePii !== 'function') {
 }
 
 const testText = 'Contact: 123-456-7890, Address: 123 Fake St';
-const result = window.sanitizePii(testText);
+let result = window.sanitizePii(testText);
 if (result.includes('123-456-7890') || result.includes('123 Fake St')) {
   console.error('❌ UMD test failed: PII still visible in browser output');
+  process.exit(1);
+}
+
+result = window.sanitizePii(testText, { detectOnly: true });
+if (result !== '[{"pattern":"address_en","match":"123 Fake St"},{"pattern":"phone_number","match":"123-456-7890"}]') {
+  console.error('❌ UMD test failed: PII not detected in detectOnly mode');
   process.exit(1);
 }

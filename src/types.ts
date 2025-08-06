@@ -5,6 +5,7 @@ export interface PiiPattern {
 }
 
 export interface SanitizeOptions {
+  detectOnly?: boolean;
   patterns?: PiiPattern[];
   useDefaultPatterns?: boolean;
   replacementTemplate?: string;
