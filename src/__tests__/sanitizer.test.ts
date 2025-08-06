@@ -170,13 +170,22 @@ describe('PiiSanitizer', () => {
 
     it('should detect home addresses', () => {
       const result = sanitizer.detectPii('Contact me at 123 Fake Ave');
-      expect(result).toContain('address_en');
+      expect(result).toHaveLength(1);
+      expect(result[0].pattern).toBe('address_en');
+      expect(result[0].match).toBe('123 Fake Ave');
     });
 
     it('should detect multiple PII types', () => {
-      const result = sanitizer.detectPii('PRI 12345678 or call (555) 123-4567');
-      expect(result).toContain('pri');
-      expect(result).toContain('phone_number');
+      const result = sanitizer.detectPii(
+        'PRI 12345678 or call (555) 123-4567 and my address is 123 Fake St'
+      );
+      expect(result).toHaveLength(3);
+
+      expect(result).toEqual([
+        { pattern: 'address_en', match: '123 Fake St' },
+        { pattern: 'phone_number', match: '(555) 123-4567' },
+        { pattern: 'pri', match: '12345678' },
+      ]);
     });
 
     it('should handle null/undefined input', () => {
@@ -217,6 +226,11 @@ describe('sanitizePii convenience function', () => {
       'Phone: 1-123-456-7890 Address: 4352 rue Portage SIN: 123456789',
       { detectOnly: true }
     );
-    expect(result).toBe('address_fr,phone_number,sin');
+    const parsed = JSON.parse(result);
+    expect(parsed).toEqual([
+      { pattern: 'address_fr', match: '4352 rue Portage' },
+      { pattern: 'phone_number', match: '1-123-456-7890' },
+      { pattern: 'sin', match: '123456789' },
+    ]);
   });
 });
