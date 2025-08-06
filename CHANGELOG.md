@@ -1,5 +1,16 @@
 # Changelog
 
+## [2.0.0](https://github.com/cds-snc/sanitize-pii/compare/v1.2.2...v2.0.0) (2025-08-06)
+
+
+### ⚠ BREAKING CHANGES
+
+* add detectOnly option to default sanitizer ([#31](https://github.com/cds-snc/sanitize-pii/issues/31))
+
+### Features
+
+* add detectOnly option to default sanitizer ([#31](https://github.com/cds-snc/sanitize-pii/issues/31)) ([1a2e2c5](https://github.com/cds-snc/sanitize-pii/commit/1a2e2c554230ced8ea8a90e19d8bf513a9a999da))
+
 ## [1.2.2](https://github.com/cds-snc/sanitize-pii/compare/v1.2.1...v1.2.2) (2025-08-05)
 
 
