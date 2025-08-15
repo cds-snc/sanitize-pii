@@ -6,7 +6,7 @@
 	},
 	"features": {
 		"ghcr.io/devcontainers/features/node:1": {
-			"version": "24.4.1"
+			"version": "24.5.0"
 		}
 	},
 	"customizations": {
