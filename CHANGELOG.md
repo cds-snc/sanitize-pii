@@ -1,5 +1,14 @@
 # Changelog
 
+## [2.0.1](https://github.com/cds-snc/sanitize-pii/compare/v2.0.0...v2.0.1) (2025-08-25)
+
+
+### Miscellaneous Chores
+
+* **deps:** lock file maintenance ([#35](https://github.com/cds-snc/sanitize-pii/issues/35)) ([bcd1226](https://github.com/cds-snc/sanitize-pii/commit/bcd1226b7b74b839fe0235fcff961f153596593c))
+* **deps:** update all non-major github action dependencies ([#33](https://github.com/cds-snc/sanitize-pii/issues/33)) ([8742662](https://github.com/cds-snc/sanitize-pii/commit/874266207ae9e80fe8ceb88c399ccc193a4b6d52))
+* **deps:** update node.js to v24.6.0 ([#34](https://github.com/cds-snc/sanitize-pii/issues/34)) ([07fa105](https://github.com/cds-snc/sanitize-pii/commit/07fa105102bb759f9d7e01a56b1f57f184b9ed1b))
+
 ## [2.0.0](https://github.com/cds-snc/sanitize-pii/compare/v1.2.2...v2.0.0) (2025-08-06)
 
 
