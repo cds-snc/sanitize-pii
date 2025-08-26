@@ -158,6 +158,7 @@ describe('Default Patterns', () => {
         '111_222_337', // Valid SIN with underscore separators
       ];
 
+      expect(sinPattern.validator).toBeDefined();
       validSINs.forEach(sin => {
         expect(sinPattern.validator!(sin)).toBe(true);
       });
@@ -172,6 +173,7 @@ describe('Default Patterns', () => {
         '812-345-678', // Starts with 8 (reserved)
       ];
 
+      expect(sinPattern.validator).toBeDefined();
       invalidSINs.forEach(sin => {
         expect(sinPattern.validator!(sin)).toBe(false);
       });

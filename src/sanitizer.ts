@@ -78,7 +78,7 @@ export class PiiSanitizer {
       if (pattern.validator) {
         // Use custom validation for this pattern
         sanitizedText = sanitizedText.replace(pattern.regex, match => {
-          return pattern.validator!(match) ? replacement : match;
+          return pattern.validator?.(match) ? replacement : match;
         });
       } else {
         // Use simple regex replacement
@@ -111,7 +111,7 @@ export class PiiSanitizer {
         let foundValidMatch = false;
 
         for (const match of matches) {
-          if (pattern.validator(match[0])) {
+          if (pattern.validator?.(match[0])) {
             detectedPatterns.push({
               pattern: pattern.name,
               match: match[0],
