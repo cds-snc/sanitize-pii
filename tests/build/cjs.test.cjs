@@ -12,7 +12,7 @@ if (result.includes('(555) 987-6543')) {
 const sanitizer = new PiiSanitizer({
   replacementTemplate: '[HIDDEN: {name}]',
 });
-const customResult = sanitizer.sanitize('SIN: 987-651-421');
+const customResult = sanitizer.sanitize('SIN: 130-692-916');
 
 if (!customResult.includes('[HIDDEN: sin')) {
   console.error('❌ Custom template test failed');
