@@ -102,7 +102,7 @@ export const defaultPatterns: PiiPattern[] = [
   {
     name: 'phone_number',
     regex:
-      /(?:\+?1[-_.\s]?)?\(?([0-9]{3})\)?[-_.\s]?([0-9]{3})[-_.\s]?([0-9]{4})\b/g,
+      /(?<![\w-])(?:\+?1[-_.\s]?)?\(?([0-9]{3})\)?[-_.\s]?([0-9]{3})[-_.\s]?([0-9]{4})\b/g,
     description: 'North American phone number',
   },
   {

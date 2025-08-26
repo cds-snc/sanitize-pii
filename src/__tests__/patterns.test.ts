@@ -27,7 +27,14 @@ describe('Default Patterns', () => {
     });
 
     it('should not match invalid phone numbers', () => {
-      const invalidPhones = ['123-456-789', '555-123-45678', 'abc-def-ghij'];
+      const invalidPhones = [
+        '123-456-789',
+        '555-123-45678',
+        'abc-def-ghij',
+        'FR01-1756211151235',
+        '-1-555_123_4567',
+        'asdf5551234567',
+      ];
 
       invalidPhones.forEach(phone => {
         expect(phonePattern.regex.test(phone)).toBe(false);
