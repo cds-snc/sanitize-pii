@@ -74,7 +74,16 @@ export class PiiSanitizer {
         '{name}',
         pattern.name
       );
-      sanitizedText = sanitizedText.replace(pattern.regex, replacement);
+
+      if (pattern.validator) {
+        // Use custom validation for this pattern
+        sanitizedText = sanitizedText.replace(pattern.regex, match => {
+          return pattern.validator!(match) ? replacement : match;
+        });
+      } else {
+        // Use simple regex replacement
+        sanitizedText = sanitizedText.replace(pattern.regex, replacement);
+      }
     }
 
     return sanitizedText;
@@ -95,13 +104,37 @@ export class PiiSanitizer {
 
     for (const pattern of this.patterns) {
       const regex = new RegExp(pattern.regex.source, pattern.regex.flags);
-      const match = remainingText.match(regex);
-      if (match) {
-        detectedPatterns.push({
-          pattern: pattern.name,
-          match: match[0],
-        });
-        remainingText = remainingText.replace(pattern.regex, '');
+
+      if (pattern.validator) {
+        // Use custom validation for this pattern - find all valid matches
+        const matches = [...remainingText.matchAll(regex)];
+        let foundValidMatch = false;
+
+        for (const match of matches) {
+          if (pattern.validator(match[0])) {
+            detectedPatterns.push({
+              pattern: pattern.name,
+              match: match[0],
+            });
+            foundValidMatch = true;
+            break; // Only take the first valid match to maintain original behavior
+          }
+        }
+
+        if (foundValidMatch) {
+          // Remove all regex matches from remaining text to prevent overlap
+          remainingText = remainingText.replace(pattern.regex, '');
+        }
+      } else {
+        // Use simple regex matching - original behavior
+        const match = remainingText.match(regex);
+        if (match) {
+          detectedPatterns.push({
+            pattern: pattern.name,
+            match: match[0],
+          });
+          remainingText = remainingText.replace(pattern.regex, '');
+        }
       }
     }
 

@@ -32,7 +32,7 @@ describe('PiiSanitizer', () => {
       const customSanitizer = new PiiSanitizer({
         replacementTemplate: '***{name}***',
       });
-      const result = customSanitizer.sanitize('123456789');
+      const result = customSanitizer.sanitize('130692916');
       expect(result).toBe('***sin***');
     });
   });
@@ -135,7 +135,7 @@ describe('PiiSanitizer', () => {
     it('should sanitize mix of all PII patterns', () => {
       const text =
         'Contact John at (613) 555-1234, lives at 45 Maple Ave, postal code K1A 0A6. ' +
-        'SIN: 123-456-789, PRI: 12-345-678. ' +
+        'SIN: 130-692-916, PRI: 12-345-678. ' +
         'Ontario drivers license: A1234-56789-01234, Quebec license: B5678-123456-78. ' +
         'Alberta license: 123456-789, Manitoba license: AB-CD-EF-G123HI. ' +
         'Newfoundland license: C987654321, Nova Scotia license: ABC-123456789. ' +
@@ -223,14 +223,14 @@ describe('sanitizePii convenience function', () => {
 
   it('should detect PII without sanitizing', () => {
     const result = sanitizePii(
-      'Phone: 1-123-456-7890 Address: 4352 rue Portage SIN: 123456789',
+      'Phone: 1-123-456-7890 Address: 4352 rue Portage SIN: 130692916',
       { detectOnly: true }
     );
     const parsed = JSON.parse(result);
     expect(parsed).toEqual([
       { pattern: 'address_fr', match: '4352 rue Portage' },
       { pattern: 'phone_number', match: '1-123-456-7890' },
-      { pattern: 'sin', match: '123456789' },
+      { pattern: 'sin', match: '130692916' },
     ]);
   });
 });

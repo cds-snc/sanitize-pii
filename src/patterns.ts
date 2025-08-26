@@ -1,4 +1,5 @@
 import { PiiPattern } from './types.js';
+import { validateSin } from './utils.js';
 
 export const defaultPatterns: PiiPattern[] = [
   {
@@ -119,6 +120,7 @@ export const defaultPatterns: PiiPattern[] = [
     name: 'sin',
     regex: /\b(:?\d{3}[-_.\s]?){3}\b/g,
     description: 'Social Insurance Number',
+    validator: validateSin,
   },
   {
     name: 'pri',

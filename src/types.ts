@@ -2,6 +2,7 @@ export interface PiiPattern {
   name: string;
   regex: RegExp;
   description?: string;
+  validator?: (match: string) => boolean;
 }
 
 export interface SanitizeOptions {

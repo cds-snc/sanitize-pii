@@ -114,8 +114,8 @@ describe('Default Patterns', () => {
   describe('sin pattern', () => {
     const sinPattern = defaultPatterns.find(p => p.name === 'sin')!;
 
-    it('should match valid Social Insurance Numbers', () => {
-      const validSINs = [
+    it('should match 9-digit format with various separators (regex test)', () => {
+      const validFormats = [
         '123-456-789',
         '123456789',
         '987-654-321',
@@ -125,13 +125,13 @@ describe('Default Patterns', () => {
         '123_456_789',
       ];
 
-      validSINs.forEach(sin => {
+      validFormats.forEach(sin => {
         expect(testFullStringMatch(sinPattern.regex, sin)).toBe(true);
       });
     });
 
-    it('should not match invalid Social Insurance Numbers', () => {
-      const invalidSINs = [
+    it('should not match invalid formats (regex test)', () => {
+      const invalidFormats = [
         '12-456-789',
         '1234-456-789',
         '123-45-789',
@@ -142,9 +142,38 @@ describe('Default Patterns', () => {
         '123-456',
       ];
 
-      invalidSINs.forEach(sin => {
+      invalidFormats.forEach(sin => {
         expect(sinPattern.regex.test(sin)).toBe(false);
         sinPattern.regex.lastIndex = 0;
+      });
+    });
+
+    it('should validate using Luhn algorithm (full validation test)', () => {
+      const validSINs = [
+        '130-692-916', // Valid SIN with Luhn
+        '130692916', // Same without separators
+        '123-456-782', // Valid SIN with Luhn
+        '987 654 324', // Valid SIN with space separators
+        '555.123.454', // Valid SIN with dot separators
+        '111_222_337', // Valid SIN with underscore separators
+      ];
+
+      validSINs.forEach(sin => {
+        expect(sinPattern.validator!(sin)).toBe(true);
+      });
+    });
+
+    it('should reject invalid SINs using Luhn algorithm (full validation test)', () => {
+      const invalidSINs = [
+        '123-456-789', // Invalid Luhn
+        '987-654-321', // Invalid Luhn
+        '111-222-333', // Invalid Luhn
+        '046-454-286', // Starts with 0 (reserved)
+        '812-345-678', // Starts with 8 (reserved)
+      ];
+
+      invalidSINs.forEach(sin => {
+        expect(sinPattern.validator!(sin)).toBe(false);
       });
     });
   });
