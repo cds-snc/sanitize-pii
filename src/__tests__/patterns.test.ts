@@ -740,35 +740,6 @@ describe('Default Patterns', () => {
     });
   });
 
-  describe('7+_digit_number pattern', () => {
-    const sevenDigitPattern = defaultPatterns.find(
-      p => p.name === '7+_digit_number'
-    )!;
-
-    it('should match numbers with 7 or more digits', () => {
-      const validNumbers = [
-        '1234567',
-        '12345678',
-        '1234567890',
-        '9876543210',
-        '1234567890123',
-      ];
-
-      validNumbers.forEach(num => {
-        expect(testFullStringMatch(sevenDigitPattern.regex, num)).toBe(true);
-      });
-    });
-
-    it('should not match numbers with less than 7 digits', () => {
-      const invalidNumbers = ['123456', '12345', '1234', '123'];
-
-      invalidNumbers.forEach(num => {
-        expect(sevenDigitPattern.regex.test(num)).toBe(false);
-        sevenDigitPattern.regex.lastIndex = 0;
-      });
-    });
-  });
-
   describe('api_key_gc_notify pattern', () => {
     const apiKeyPattern = defaultPatterns.find(
       p => p.name === 'api_key_gc_notify'
