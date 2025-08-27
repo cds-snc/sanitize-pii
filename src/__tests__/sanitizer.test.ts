@@ -86,6 +86,12 @@ describe('PiiSanitizer', () => {
       );
     });
 
+    it('should not sanitize timestamp error codes', () => {
+      const text = 'User error was FR01-1751234561430';
+      const result = sanitizer.sanitize(text);
+      expect(result).toBe('User error was FR01-1751234561430');
+    });
+
     it('should sanitize multiple phone numbers', () => {
       const text = 'Call (555) 123-4567 or (555) 987-6543';
       const result = sanitizer.sanitize(text);
@@ -144,14 +150,14 @@ describe('PiiSanitizer', () => {
         'Nova Scotia health: 1234-567-890, NWT health: A1234567. ' +
         'Passport: AB123456, Credit card: 1234-5678-9012-3456. ' +
         'IP: 192.168.1.1, API key: gcntfy-test-12345678-1234-1234-1234-123456789012. ' +
-        'PO Box: P.O. BOX 123, 7-digit number: 1234567. ' +
+        'PO Box: P.O. BOX 123. ' +
         'Address (en): 123 Fake Ave, Address (fr): 34 rue Bernard. ' +
         'Bank account: 12345-678-123456789012';
 
       const result = sanitizer.sanitize(text);
 
       expect(result).toBe(
-        'Contact John at [Redacted: phone_number], lives at [Redacted: address_en], postal code [Redacted: postal_code]. SIN: [Redacted: sin], PRI: [Redacted: pri]. Ontario drivers license: [Redacted: drivers_license_ontario], Quebec license: [Redacted: drivers_license_quebec]. Alberta license: [Redacted: drivers_license_alberta], Manitoba license: [Redacted: drivers_license_manitoba]. Newfoundland license: [Redacted: drivers_license_newfoundland], Nova Scotia license: [Redacted: drivers_license_nova_scotia]. Health cards - Ontario: [Redacted: health_card_nova_scotia]-AB, Quebec: [Redacted: health_card_quebec]. Alberta health: [Redacted: health_card_alberta], Newfoundland health: [Redacted: health_card_newfoundland]. Nova Scotia health: [Redacted: health_card_nova_scotia], NWT health: [Redacted: health_card_nwt]. Passport: [Redacted: passport_canada], Credit card: [Redacted: credit_card]. IP: [Redacted: ip_address], API key: [Redacted: api_key_gc_notify]. PO Box: [Redacted: po_box], 7-digit number: [Redacted: 7+_digit_number]. Address (en): [Redacted: address_en], Address (fr): [Redacted: address_fr]. Bank account: [Redacted: bank_account_canada]'
+        'Contact John at [Redacted: phone_number], lives at [Redacted: address_en], postal code [Redacted: postal_code]. SIN: [Redacted: sin], PRI: [Redacted: pri]. Ontario drivers license: [Redacted: drivers_license_ontario], Quebec license: [Redacted: drivers_license_quebec]. Alberta license: [Redacted: drivers_license_alberta], Manitoba license: [Redacted: drivers_license_manitoba]. Newfoundland license: [Redacted: drivers_license_newfoundland], Nova Scotia license: [Redacted: drivers_license_nova_scotia]. Health cards - Ontario: [Redacted: health_card_nova_scotia]-AB, Quebec: [Redacted: health_card_quebec]. Alberta health: [Redacted: health_card_alberta], Newfoundland health: [Redacted: health_card_newfoundland]. Nova Scotia health: [Redacted: health_card_nova_scotia], NWT health: [Redacted: health_card_nwt]. Passport: [Redacted: passport_canada], Credit card: [Redacted: credit_card]. IP: [Redacted: ip_address], API key: [Redacted: api_key_gc_notify]. PO Box: [Redacted: po_box]. Address (en): [Redacted: address_en], Address (fr): [Redacted: address_fr]. Bank account: [Redacted: bank_account_canada]'
       );
     });
 

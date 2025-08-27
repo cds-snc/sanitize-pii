@@ -125,9 +125,4 @@ export const defaultPatterns: PiiPattern[] = [
     regex: /\b\d{2,3}[-_.\s]?\d{3}[-_.\s]?\d{3}\b/g,
     description: 'Personal Record Identifier',
   },
-  {
-    name: '7+_digit_number', // Catches provincial driver's license and health card numbers
-    regex: /\b\d{7,}\b/g,
-    description: '7 or more digit number',
-  },
 ];
