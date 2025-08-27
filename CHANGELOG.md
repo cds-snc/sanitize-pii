@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.0.2](https://github.com/cds-snc/sanitize-pii/compare/v2.0.1...v2.0.2) (2025-08-27)
+
+
+### Bug Fixes
+
+* remove 7+ digit redaction ([#41](https://github.com/cds-snc/sanitize-pii/issues/41)) ([77da828](https://github.com/cds-snc/sanitize-pii/commit/77da8287140715f7725a4ba8834f569b5eb9c062))
+
 ## [2.0.1](https://github.com/cds-snc/sanitize-pii/compare/v2.0.0...v2.0.1) (2025-08-26)
 
 
