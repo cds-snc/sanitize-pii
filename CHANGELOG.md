@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.0.3](https://github.com/cds-snc/sanitize-pii/compare/v2.0.2...v2.0.3) (2025-09-02)
+
+
+### Miscellaneous Chores
+
+* **deps:** update all non-major github action dependencies ([#43](https://github.com/cds-snc/sanitize-pii/issues/43)) ([e082775](https://github.com/cds-snc/sanitize-pii/commit/e08277599dfb1317579a918f5c366e5e534c959e))
+
 ## [2.0.2](https://github.com/cds-snc/sanitize-pii/compare/v2.0.1...v2.0.2) (2025-08-27)
 
 
