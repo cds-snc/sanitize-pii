@@ -1,5 +1,15 @@
 # Changelog
 
+## [2.0.3](https://github.com/cds-snc/sanitize-pii/compare/v2.0.2...v2.0.3) (2025-09-08)
+
+
+### Miscellaneous Chores
+
+* **deps:** update actions/dependency-review-action action to v4.7.3 ([#46](https://github.com/cds-snc/sanitize-pii/issues/46)) ([3b8e336](https://github.com/cds-snc/sanitize-pii/commit/3b8e336a82e18d06ae5da67e0cb6228cd55d4214))
+* **deps:** update all minor dependencies ([#47](https://github.com/cds-snc/sanitize-pii/issues/47)) ([4c80bed](https://github.com/cds-snc/sanitize-pii/commit/4c80bed60845a07f77c39ada67e4906c47669e86))
+* **deps:** update all non-major github action dependencies ([#43](https://github.com/cds-snc/sanitize-pii/issues/43)) ([e082775](https://github.com/cds-snc/sanitize-pii/commit/e08277599dfb1317579a918f5c366e5e534c959e))
+* **deps:** update mcr.microsoft.com/devcontainers/base:bullseye docker digest to b387f79 ([#45](https://github.com/cds-snc/sanitize-pii/issues/45)) ([7b98e6b](https://github.com/cds-snc/sanitize-pii/commit/7b98e6bbbdd338df1d46bedfff85836edafc81d7))
+
 ## [2.0.2](https://github.com/cds-snc/sanitize-pii/compare/v2.0.1...v2.0.2) (2025-08-27)
 
 
