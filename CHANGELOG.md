@@ -1,5 +1,27 @@
 # Changelog
 
+## [2.0.3](https://github.com/cds-snc/sanitize-pii/compare/v2.0.2...v2.0.3) (2025-10-06)
+
+
+### Miscellaneous Chores
+
+* **deps:** lock file maintenance ([#51](https://github.com/cds-snc/sanitize-pii/issues/51)) ([9f791f4](https://github.com/cds-snc/sanitize-pii/commit/9f791f418a80a7d4180db924a89b1a7b6e37a0d6))
+* **deps:** lock file maintenance ([#54](https://github.com/cds-snc/sanitize-pii/issues/54)) ([5ca851b](https://github.com/cds-snc/sanitize-pii/commit/5ca851b8ee4978177daa6ff159d6e6a65c197096))
+* **deps:** lock file maintenance ([#55](https://github.com/cds-snc/sanitize-pii/issues/55)) ([cd3dd78](https://github.com/cds-snc/sanitize-pii/commit/cd3dd78fe6ab3cce2bd481059ab12ece6a6b56a9))
+* **deps:** lock file maintenance ([#58](https://github.com/cds-snc/sanitize-pii/issues/58)) ([b3591ff](https://github.com/cds-snc/sanitize-pii/commit/b3591ff69bcf1b326229ecbe795b55e74b6c30f8))
+* **deps:** update actions/dependency-review-action action to v4.7.3 ([#46](https://github.com/cds-snc/sanitize-pii/issues/46)) ([3b8e336](https://github.com/cds-snc/sanitize-pii/commit/3b8e336a82e18d06ae5da67e0cb6228cd55d4214))
+* **deps:** update all minor dependencies ([#47](https://github.com/cds-snc/sanitize-pii/issues/47)) ([4c80bed](https://github.com/cds-snc/sanitize-pii/commit/4c80bed60845a07f77c39ada67e4906c47669e86))
+* **deps:** update all minor dependencies ([#49](https://github.com/cds-snc/sanitize-pii/issues/49)) ([b6c25ec](https://github.com/cds-snc/sanitize-pii/commit/b6c25ec9a9779e12f62a9b8eed0c9061d1402835))
+* **deps:** update all non-major github action dependencies ([#43](https://github.com/cds-snc/sanitize-pii/issues/43)) ([e082775](https://github.com/cds-snc/sanitize-pii/commit/e08277599dfb1317579a918f5c366e5e534c959e))
+* **deps:** update all non-major github action dependencies ([#52](https://github.com/cds-snc/sanitize-pii/issues/52)) ([5aa5722](https://github.com/cds-snc/sanitize-pii/commit/5aa572286f58e50ebc8fae9c832354ecdb63f0c3))
+* **deps:** update all non-major github action dependencies ([#56](https://github.com/cds-snc/sanitize-pii/issues/56)) ([011b563](https://github.com/cds-snc/sanitize-pii/commit/011b56352347bbd4075891824c4f6316bb5de7d7))
+* **deps:** update dependency jest to v30.1.3 ([#48](https://github.com/cds-snc/sanitize-pii/issues/48)) ([f0e8c0c](https://github.com/cds-snc/sanitize-pii/commit/f0e8c0c50b99cef9838a48e9d35b7e9ad4fac980))
+* **deps:** update github/codeql-action action to v3.30.1 ([#50](https://github.com/cds-snc/sanitize-pii/issues/50)) ([4678e41](https://github.com/cds-snc/sanitize-pii/commit/4678e418a35f64a864c47575ae81a876f2d56bdd))
+* **deps:** update mcr.microsoft.com/devcontainers/base:bullseye docker digest to b387f79 ([#45](https://github.com/cds-snc/sanitize-pii/issues/45)) ([7b98e6b](https://github.com/cds-snc/sanitize-pii/commit/7b98e6bbbdd338df1d46bedfff85836edafc81d7))
+* **deps:** update node.js to v24.8.0 ([#53](https://github.com/cds-snc/sanitize-pii/issues/53)) ([90d0c7e](https://github.com/cds-snc/sanitize-pii/commit/90d0c7ef1163f9a0468b65cca108732446bc41f9))
+* **deps:** update node.js to v24.9.0 ([#57](https://github.com/cds-snc/sanitize-pii/issues/57)) ([cf5cfef](https://github.com/cds-snc/sanitize-pii/commit/cf5cfef57abf110615ef7dc22579c0ca1bcb6c78))
+* synced file(s) with cds-snc/site-reliability-engineering ([#59](https://github.com/cds-snc/sanitize-pii/issues/59)) ([e7077e6](https://github.com/cds-snc/sanitize-pii/commit/e7077e6377dc89331e0886a415f06ac0aafb4bce))
+
 ## [2.0.2](https://github.com/cds-snc/sanitize-pii/compare/v2.0.1...v2.0.2) (2025-08-27)
 
 
