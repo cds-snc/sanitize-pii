@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.0.4](https://github.com/cds-snc/sanitize-pii/compare/v2.0.3...v2.0.4) (2025-10-07)
+
+
+### Miscellaneous Chores
+
+* **deps:** update actions/checkout action to v5 ([#60](https://github.com/cds-snc/sanitize-pii/issues/60)) ([0c14d34](https://github.com/cds-snc/sanitize-pii/commit/0c14d34d1bd7b0a1ab67929cbd067701661b8042))
+* **deps:** update dependency jsdom to v27 ([#62](https://github.com/cds-snc/sanitize-pii/issues/62)) ([9355f66](https://github.com/cds-snc/sanitize-pii/commit/9355f663036e4a09c008000dfd56605fba946f87))
+
 ## [2.0.3](https://github.com/cds-snc/sanitize-pii/compare/v2.0.2...v2.0.3) (2025-10-06)
 
 
