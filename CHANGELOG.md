@@ -1,5 +1,16 @@
 # Changelog
 
+## [2.0.4](https://github.com/cds-snc/sanitize-pii/compare/v2.0.3...v2.0.4) (2025-10-14)
+
+
+### Miscellaneous Chores
+
+* **deps:** lock file maintenance ([#66](https://github.com/cds-snc/sanitize-pii/issues/66)) ([51ea921](https://github.com/cds-snc/sanitize-pii/commit/51ea92173fb748dfa6da1dfa023a463d1088b815))
+* **deps:** update actions/checkout action to v5 ([#60](https://github.com/cds-snc/sanitize-pii/issues/60)) ([0c14d34](https://github.com/cds-snc/sanitize-pii/commit/0c14d34d1bd7b0a1ab67929cbd067701661b8042))
+* **deps:** update dependency jsdom to v27 ([#62](https://github.com/cds-snc/sanitize-pii/issues/62)) ([9355f66](https://github.com/cds-snc/sanitize-pii/commit/9355f663036e4a09c008000dfd56605fba946f87))
+* **deps:** update github/codeql-action action to v3.30.6 ([#65](https://github.com/cds-snc/sanitize-pii/issues/65)) ([b9ab359](https://github.com/cds-snc/sanitize-pii/commit/b9ab3591591afd34b83ad9738cc4d1552c479e7f))
+* synced local '.github/workflows/export_github_data.yml' with remote 'tools/sre_file_sync/export_github_data.yml' ([#64](https://github.com/cds-snc/sanitize-pii/issues/64)) ([b9b2405](https://github.com/cds-snc/sanitize-pii/commit/b9b240527f573b5cc231755d84740bbd30615765))
+
 ## [2.0.3](https://github.com/cds-snc/sanitize-pii/compare/v2.0.2...v2.0.3) (2025-10-06)
 
 
