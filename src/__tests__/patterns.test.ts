@@ -47,7 +47,7 @@ describe('Default Patterns', () => {
     const intlPhonePattern = defaultPatterns.find(
       p => p.name === 'phone_number_international'
     )!;
-    
+
     it('should match valid international phone numbers with + prefix', () => {
       const validIntlPhones = [
         '+12345678901', // 11 digits (minimum: 1 + 9 + 1)
