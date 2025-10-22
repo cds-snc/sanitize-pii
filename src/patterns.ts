@@ -106,6 +106,11 @@ export const defaultPatterns: PiiPattern[] = [
     description: 'North American phone number',
   },
   {
+    name: 'phone_number_international',
+    regex: /(?<![\w-])\+\d[\d ]{9,13}\d\b/g,
+    description: 'International phone number',
+  },
+  {
     name: 'po_box',
     regex: /\bP[-_.\s]*O[-_.\s]*BOX[-_.\s]*\d+\b/gi,
     description: 'PO Box',
