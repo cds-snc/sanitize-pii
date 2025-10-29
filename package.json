@@ -1,6 +1,6 @@
 {
   "name": "@cdssnc/sanitize-pii",
-  "version": "2.0.3",
+  "version": "2.1.0",
   "license": "MIT",
   "author": "Government of Canada / Gouvernement du Canada",
   "description": "TypeScript module for removing personally identifiable information (PII) from text",

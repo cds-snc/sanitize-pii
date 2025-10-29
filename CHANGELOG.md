@@ -1,5 +1,28 @@
 # Changelog
 
+## [2.1.0](https://github.com/cds-snc/sanitize-pii/compare/v2.0.3...v2.1.0) (2025-10-29)
+
+
+### Features
+
+* add international phone number regex pattern ([#72](https://github.com/cds-snc/sanitize-pii/issues/72)) ([ed960a9](https://github.com/cds-snc/sanitize-pii/commit/ed960a932e1f71055b411a1efe4ac97c1689d5f8))
+
+
+### Miscellaneous Chores
+
+* **deps:** lock file maintenance ([#66](https://github.com/cds-snc/sanitize-pii/issues/66)) ([51ea921](https://github.com/cds-snc/sanitize-pii/commit/51ea92173fb748dfa6da1dfa023a463d1088b815))
+* **deps:** lock file maintenance ([#70](https://github.com/cds-snc/sanitize-pii/issues/70)) ([1bce220](https://github.com/cds-snc/sanitize-pii/commit/1bce220d871d7c07cafbe3390ef64aef86404ef3))
+* **deps:** lock file maintenance ([#74](https://github.com/cds-snc/sanitize-pii/issues/74)) ([1a79c58](https://github.com/cds-snc/sanitize-pii/commit/1a79c58333bfb40f90f16164bed06f0499b1b254))
+* **deps:** update actions/checkout action to v5 ([#60](https://github.com/cds-snc/sanitize-pii/issues/60)) ([0c14d34](https://github.com/cds-snc/sanitize-pii/commit/0c14d34d1bd7b0a1ab67929cbd067701661b8042))
+* **deps:** update all non-major github action dependencies ([#68](https://github.com/cds-snc/sanitize-pii/issues/68)) ([e3ca7ab](https://github.com/cds-snc/sanitize-pii/commit/e3ca7ab5a8f4ad9d98813f1b986e40b2c4d8b332))
+* **deps:** update dependency jsdom to v27 ([#62](https://github.com/cds-snc/sanitize-pii/issues/62)) ([9355f66](https://github.com/cds-snc/sanitize-pii/commit/9355f663036e4a09c008000dfd56605fba946f87))
+* **deps:** update github/codeql-action action to v3.30.6 ([#65](https://github.com/cds-snc/sanitize-pii/issues/65)) ([b9ab359](https://github.com/cds-snc/sanitize-pii/commit/b9ab3591591afd34b83ad9738cc4d1552c479e7f))
+* **deps:** update github/codeql-action action to v3.30.9 ([#73](https://github.com/cds-snc/sanitize-pii/issues/73)) ([76577bb](https://github.com/cds-snc/sanitize-pii/commit/76577bb8e41e8efe7d2ec82dbfe5c337f93cc1b4))
+* **deps:** update mcr.microsoft.com/devcontainers/base:bullseye docker digest to 1f1835d ([#67](https://github.com/cds-snc/sanitize-pii/issues/67)) ([1ded726](https://github.com/cds-snc/sanitize-pii/commit/1ded726faf87d752725defa8b5e569e72e731487))
+* **deps:** update node.js to v24.10.0 ([#69](https://github.com/cds-snc/sanitize-pii/issues/69)) ([d7f2a7b](https://github.com/cds-snc/sanitize-pii/commit/d7f2a7bcae9d06c13243fa681fc79bfe1878838b))
+* synced local '.github/workflows/export_github_data.yml' with remote 'tools/sre_file_sync/export_github_data.yml' ([#64](https://github.com/cds-snc/sanitize-pii/issues/64)) ([b9b2405](https://github.com/cds-snc/sanitize-pii/commit/b9b240527f573b5cc231755d84740bbd30615765))
+* synced local '.github/workflows/export_github_data.yml' with remote 'tools/sre_file_sync/export_github_data.yml' ([#71](https://github.com/cds-snc/sanitize-pii/issues/71)) ([3515a95](https://github.com/cds-snc/sanitize-pii/commit/3515a95a07cc89c5d05e8bacdb3445f38d88ef9c))
+
 ## [2.0.3](https://github.com/cds-snc/sanitize-pii/compare/v2.0.2...v2.0.3) (2025-10-06)
 
 
