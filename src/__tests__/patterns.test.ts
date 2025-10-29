@@ -43,6 +43,97 @@ describe('Default Patterns', () => {
     });
   });
 
+  describe('phone_number_international pattern', () => {
+    const intlPhonePattern = defaultPatterns.find(
+      p => p.name === 'phone_number_international'
+    )!;
+
+    it('should match valid international phone numbers with + prefix', () => {
+      const validIntlPhones = [
+        '+12345678901', // 11 digits (minimum: 1 + 9 + 1)
+        '+123456789012', // 12 digits
+        '+1234567890123', // 13 digits
+        '+12345678901234', // 14 digits
+        '+123456789012345', // 15 digits (maximum: 1 + 13 + 1)
+        '+1 234 567 8901', // 11 digits with spaces
+        '+44 1234 567890', // UK format with spaces
+      ];
+
+      validIntlPhones.forEach(phone => {
+        expect(testFullStringMatch(intlPhonePattern.regex, phone)).toBe(true);
+      });
+    });
+
+    it('should not match phone numbers without + prefix', () => {
+      const invalidIntlPhones = [
+        '1234567890', // No + prefix
+        '12345678901', // No + prefix
+        '441234567890', // No + prefix
+      ];
+
+      invalidIntlPhones.forEach(phone => {
+        expect(intlPhonePattern.regex.test(phone)).toBe(false);
+        intlPhonePattern.regex.lastIndex = 0;
+      });
+    });
+
+    it('should not match phone numbers with less than 11 digits', () => {
+      const tooShortPhones = [
+        '+1234567890', // 10 digits (too short)
+        '+123456789', // 9 digits
+        '+12345678', // 8 digits
+        '+1234567', // 7 digits
+        '+123456', // 6 digits
+      ];
+
+      tooShortPhones.forEach(phone => {
+        expect(intlPhonePattern.regex.test(phone)).toBe(false);
+        intlPhonePattern.regex.lastIndex = 0;
+      });
+    });
+
+    it('should not match invalid formats', () => {
+      const invalidPhones = [
+        '++1234567890', // Double +
+        '+', // Just +
+        '', // Empty string
+      ];
+
+      invalidPhones.forEach(phone => {
+        expect(intlPhonePattern.regex.test(phone)).toBe(false);
+        intlPhonePattern.regex.lastIndex = 0;
+      });
+    });
+
+    it('should match international phone numbers in text', () => {
+      const texts = [
+        'Call me at +12345678901',
+        'My number is +44 1234 567890',
+        'Contact: +123456789012',
+        '+12345678901 is my phone',
+      ];
+
+      texts.forEach(text => {
+        expect(intlPhonePattern.regex.test(text)).toBe(true);
+        intlPhonePattern.regex.lastIndex = 0;
+      });
+    });
+
+    it('should not match when digits contain non-numeric characters (except spaces)', () => {
+      const invalidPhones = [
+        '+abc1234567890', // Letters immediately after +
+        '+12-34-56-78-90', // Dashes between digits
+        '+12.34.56.78.90', // Dots between digits
+        '+1234567890123456', // 16 digits (too long: max is 15)
+      ];
+
+      invalidPhones.forEach(phone => {
+        expect(intlPhonePattern.regex.test(phone)).toBe(false);
+        intlPhonePattern.regex.lastIndex = 0;
+      });
+    });
+  });
+
   describe('postal_code pattern', () => {
     const postalPattern = defaultPatterns.find(p => p.name === 'postal_code')!;
 
