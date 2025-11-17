@@ -1,5 +1,18 @@
 # Changelog
 
+## [2.1.1](https://github.com/cds-snc/sanitize-pii/compare/v2.1.0...v2.1.1) (2025-11-17)
+
+
+### Miscellaneous Chores
+
+* **deps:** lock file maintenance ([#76](https://github.com/cds-snc/sanitize-pii/issues/76)) ([ef91563](https://github.com/cds-snc/sanitize-pii/commit/ef91563d297b5805d93dd79f94ba552cdeadb841))
+* **deps:** lock file maintenance ([#80](https://github.com/cds-snc/sanitize-pii/issues/80)) ([2f48801](https://github.com/cds-snc/sanitize-pii/commit/2f48801dc30d6aabdf2bdcfbeb91bba42f56d342))
+* **deps:** lock file maintenance ([#82](https://github.com/cds-snc/sanitize-pii/issues/82)) ([a8be72f](https://github.com/cds-snc/sanitize-pii/commit/a8be72f7e80d63610b927c7117a6ff8b9c499a32))
+* **deps:** update all non-major github action dependencies ([#75](https://github.com/cds-snc/sanitize-pii/issues/75)) ([1c7673a](https://github.com/cds-snc/sanitize-pii/commit/1c7673a8e6603bc7c3f5d0a3b39de786812c5933))
+* **deps:** update github/codeql-action action to v3.31.2 ([#78](https://github.com/cds-snc/sanitize-pii/issues/78)) ([dd712de](https://github.com/cds-snc/sanitize-pii/commit/dd712dec11429241460ce5b467b7d1e3a94db717))
+* **deps:** update node.js to v24.11.0 ([#79](https://github.com/cds-snc/sanitize-pii/issues/79)) ([83f8cf0](https://github.com/cds-snc/sanitize-pii/commit/83f8cf0516f4e244e8787c8a2c9a9b27dca25f96))
+* synced local '.github/workflows/s3-backup.yml' with remote 'tools/sre_file_sync/s3-backup.yml' ([#81](https://github.com/cds-snc/sanitize-pii/issues/81)) ([3d55bef](https://github.com/cds-snc/sanitize-pii/commit/3d55befe1ad98225918b29cf93d142fa30035bda))
+
 ## [2.1.0](https://github.com/cds-snc/sanitize-pii/compare/v2.0.3...v2.1.0) (2025-10-29)
 
 
