@@ -1,5 +1,22 @@
 # Changelog
 
+## [2.1.1](https://github.com/cds-snc/sanitize-pii/compare/v2.1.0...v2.1.1) (2025-11-28)
+
+
+### Miscellaneous Chores
+
+* **deps:** lock file maintenance ([#76](https://github.com/cds-snc/sanitize-pii/issues/76)) ([ef91563](https://github.com/cds-snc/sanitize-pii/commit/ef91563d297b5805d93dd79f94ba552cdeadb841))
+* **deps:** lock file maintenance ([#80](https://github.com/cds-snc/sanitize-pii/issues/80)) ([2f48801](https://github.com/cds-snc/sanitize-pii/commit/2f48801dc30d6aabdf2bdcfbeb91bba42f56d342))
+* **deps:** lock file maintenance ([#82](https://github.com/cds-snc/sanitize-pii/issues/82)) ([a8be72f](https://github.com/cds-snc/sanitize-pii/commit/a8be72f7e80d63610b927c7117a6ff8b9c499a32))
+* **deps:** update all non-major github action dependencies ([#75](https://github.com/cds-snc/sanitize-pii/issues/75)) ([1c7673a](https://github.com/cds-snc/sanitize-pii/commit/1c7673a8e6603bc7c3f5d0a3b39de786812c5933))
+* **deps:** update all non-major github action dependencies ([#84](https://github.com/cds-snc/sanitize-pii/issues/84)) ([159716b](https://github.com/cds-snc/sanitize-pii/commit/159716b5525ef5e215894f09d2ea0d5f4b30701c))
+* **deps:** update github/codeql-action action to v3.31.2 ([#78](https://github.com/cds-snc/sanitize-pii/issues/78)) ([dd712de](https://github.com/cds-snc/sanitize-pii/commit/dd712dec11429241460ce5b467b7d1e3a94db717))
+* **deps:** update node.js to v24.11.0 ([#79](https://github.com/cds-snc/sanitize-pii/issues/79)) ([83f8cf0](https://github.com/cds-snc/sanitize-pii/commit/83f8cf0516f4e244e8787c8a2c9a9b27dca25f96))
+* **deps:** update node.js to v24.11.1 ([#85](https://github.com/cds-snc/sanitize-pii/issues/85)) ([b1300c2](https://github.com/cds-snc/sanitize-pii/commit/b1300c2aa8fcd979f92610218a96233457553e23))
+* enable Renovate OSV and GitHub vulnerability alert PRs ([#88](https://github.com/cds-snc/sanitize-pii/issues/88)) ([fc38f0a](https://github.com/cds-snc/sanitize-pii/commit/fc38f0a6857511a8e9557ba16ad3bb04c2da78bb))
+* synced local '.github/workflows/export_github_data.yml' with remote 'tools/sre_file_sync/export_github_data.yml' ([#87](https://github.com/cds-snc/sanitize-pii/issues/87)) ([e16432a](https://github.com/cds-snc/sanitize-pii/commit/e16432a3ced23257cd80e78a0df2e3da2df98525))
+* synced local '.github/workflows/s3-backup.yml' with remote 'tools/sre_file_sync/s3-backup.yml' ([#81](https://github.com/cds-snc/sanitize-pii/issues/81)) ([3d55bef](https://github.com/cds-snc/sanitize-pii/commit/3d55befe1ad98225918b29cf93d142fa30035bda))
+
 ## [2.1.0](https://github.com/cds-snc/sanitize-pii/compare/v2.0.3...v2.1.0) (2025-10-29)
 
 
