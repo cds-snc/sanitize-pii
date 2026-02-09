@@ -1,5 +1,14 @@
 # Changelog
 
+## [2.1.2](https://github.com/cds-snc/sanitize-pii/compare/v2.1.1...v2.1.2) (2026-02-09)
+
+
+### Miscellaneous Chores
+
+* **deps:** lock file maintenance ([#131](https://github.com/cds-snc/sanitize-pii/issues/131)) ([b025e32](https://github.com/cds-snc/sanitize-pii/commit/b025e32ffc87d741075f27eef0d28ee70ff377be))
+* **deps:** update all minor dependencies ([#129](https://github.com/cds-snc/sanitize-pii/issues/129)) ([c54944b](https://github.com/cds-snc/sanitize-pii/commit/c54944b7e5b619f8558096a92e0a5b23cdd5201d))
+* **deps:** update github/codeql-action action to v4.32.0 ([#130](https://github.com/cds-snc/sanitize-pii/issues/130)) ([46edef3](https://github.com/cds-snc/sanitize-pii/commit/46edef36ee89a92b417c0c11fd61273f4612c24b))
+
 ## [2.1.1](https://github.com/cds-snc/sanitize-pii/compare/v2.1.0...v2.1.1) (2026-02-02)
 
 
