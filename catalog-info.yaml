@@ -1,0 +1,14 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: sanitize-pii
+  title: Sanitize PII
+  description: A Node.js module used by the Platform product's support contact forms.  It uses regular expressions to remove personally identifiable information before sending requests to the Platform Support team.
+  annotations:
+    github.com/project-slug: cds-snc/sanitize-pii
+spec:
+  type: service
+  lifecycle: production
+  owner: group:cds-snc/platform-core
+  system: support
+
