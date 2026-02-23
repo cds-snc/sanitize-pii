@@ -1,1 +1,4 @@
 minimumReleaseAge: 10080 # 1 week in mins
+minimumReleaseAgeExclude:
+  # Renovate security update: webpack@5.104.1
+  - webpack@5.104.1
