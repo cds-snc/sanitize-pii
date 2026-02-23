@@ -1,5 +1,25 @@
 # Changelog
 
+## [2.1.2](https://github.com/cds-snc/sanitize-pii/compare/v2.1.1...v2.1.2) (2026-02-23)
+
+
+### Miscellaneous Chores
+
+* **deps:** lock file maintenance ([#131](https://github.com/cds-snc/sanitize-pii/issues/131)) ([b025e32](https://github.com/cds-snc/sanitize-pii/commit/b025e32ffc87d741075f27eef0d28ee70ff377be))
+* **deps:** lock file maintenance ([#137](https://github.com/cds-snc/sanitize-pii/issues/137)) ([ab33535](https://github.com/cds-snc/sanitize-pii/commit/ab3353507ea63305d88794944ed50ab5a2da58e8))
+* **deps:** lock file maintenance ([#138](https://github.com/cds-snc/sanitize-pii/issues/138)) ([3a0f8c3](https://github.com/cds-snc/sanitize-pii/commit/3a0f8c3bb90b118dca1ee22e084a2559adba703f))
+* **deps:** lock file maintenance ([#142](https://github.com/cds-snc/sanitize-pii/issues/142)) ([16a9608](https://github.com/cds-snc/sanitize-pii/commit/16a960846dde822121a55e274b032bc60d222d92))
+* **deps:** update all minor dependencies ([#129](https://github.com/cds-snc/sanitize-pii/issues/129)) ([c54944b](https://github.com/cds-snc/sanitize-pii/commit/c54944b7e5b619f8558096a92e0a5b23cdd5201d))
+* **deps:** update all minor dependencies ([#135](https://github.com/cds-snc/sanitize-pii/issues/135)) ([2da66b6](https://github.com/cds-snc/sanitize-pii/commit/2da66b6c965827dfac2a81ecd8323146ad1edeb2))
+* **deps:** update all non-major github action dependencies ([#134](https://github.com/cds-snc/sanitize-pii/issues/134)) ([a21c2ef](https://github.com/cds-snc/sanitize-pii/commit/a21c2efe49232b5c5c572ad115a05d9bc95c13c0))
+* **deps:** update all non-major github action dependencies ([#140](https://github.com/cds-snc/sanitize-pii/issues/140)) ([abc3006](https://github.com/cds-snc/sanitize-pii/commit/abc3006c36e77f7220f7118cf189dd0e400bbdb1))
+* **deps:** update all non-major github action dependencies ([#143](https://github.com/cds-snc/sanitize-pii/issues/143)) ([5e4ffaa](https://github.com/cds-snc/sanitize-pii/commit/5e4ffaae5618968109e1393e1542573204d45bd1))
+* **deps:** update dependency webpack to v5.104.1 [security] ([#144](https://github.com/cds-snc/sanitize-pii/issues/144)) ([f05ae4c](https://github.com/cds-snc/sanitize-pii/commit/f05ae4c890065dd4d3d047824c34b28efe994969))
+* **deps:** update dependency webpack to v5.105.2 ([#141](https://github.com/cds-snc/sanitize-pii/issues/141)) ([2179e31](https://github.com/cds-snc/sanitize-pii/commit/2179e31ab68c08e66e50dd903a35c8a2df5b6b41))
+* **deps:** update github/codeql-action action to v4.32.0 ([#130](https://github.com/cds-snc/sanitize-pii/issues/130)) ([46edef3](https://github.com/cds-snc/sanitize-pii/commit/46edef36ee89a92b417c0c11fd61273f4612c24b))
+* **deps:** update node.js to v24.13.1 ([#136](https://github.com/cds-snc/sanitize-pii/issues/136)) ([cc31c12](https://github.com/cds-snc/sanitize-pii/commit/cc31c122c0d1491b32a19290e5fef88d20d302dc))
+* synced local '.github/workflows/export_github_data.yml' with remote 'tools/sre_file_sync/export_github_data.yml' ([#139](https://github.com/cds-snc/sanitize-pii/issues/139)) ([75699b8](https://github.com/cds-snc/sanitize-pii/commit/75699b8077a1d1b66db8f426abb5e828647c5951))
+
 ## [2.1.1](https://github.com/cds-snc/sanitize-pii/compare/v2.1.0...v2.1.1) (2026-02-02)
 
 
