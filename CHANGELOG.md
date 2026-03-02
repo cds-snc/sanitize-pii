@@ -1,5 +1,14 @@
 # Changelog
 
+## [2.1.3](https://github.com/cds-snc/sanitize-pii/compare/v2.1.2...v2.1.3) (2026-03-02)
+
+
+### Miscellaneous Chores
+
+* **deps:** update all patch dependencies ([#145](https://github.com/cds-snc/sanitize-pii/issues/145)) ([a4aa6e0](https://github.com/cds-snc/sanitize-pii/commit/a4aa6e0897cc944a976b62e664ef1a66944ae875))
+* **deps:** update dependency jsdom to v28 ([#149](https://github.com/cds-snc/sanitize-pii/issues/149)) ([8209ad5](https://github.com/cds-snc/sanitize-pii/commit/8209ad590d5c55defb6ccebf3ad2cc7ce4339749))
+* **deps:** update dependency prettier to v3.8.1 ([#147](https://github.com/cds-snc/sanitize-pii/issues/147)) ([fc13ff2](https://github.com/cds-snc/sanitize-pii/commit/fc13ff26c2796dd579c0135603e3f9c47bb77385))
+
 ## [2.1.2](https://github.com/cds-snc/sanitize-pii/compare/v2.1.1...v2.1.2) (2026-02-23)
 
 
