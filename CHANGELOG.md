@@ -1,5 +1,34 @@
 # Changelog
 
+## [2.2.0](https://github.com/cds-snc/sanitize-pii/compare/v2.1.2...v2.2.0) (2026-04-09)
+
+
+### Features
+
+* setup DNS proxy safelist on workflows ([#165](https://github.com/cds-snc/sanitize-pii/issues/165)) ([e3c8554](https://github.com/cds-snc/sanitize-pii/commit/e3c85544453b4715fd71bc660248dc2bda275b1b))
+
+
+### Miscellaneous Chores
+
+* **deps:** lock file maintenance ([#152](https://github.com/cds-snc/sanitize-pii/issues/152)) ([f189a1c](https://github.com/cds-snc/sanitize-pii/commit/f189a1cd297f087a79272114ba16675e07cb3721))
+* **deps:** lock file maintenance ([#157](https://github.com/cds-snc/sanitize-pii/issues/157)) ([bcbb324](https://github.com/cds-snc/sanitize-pii/commit/bcbb3240ab30fc24e4738b49c17ee11dea16f64f))
+* **deps:** lock file maintenance ([#164](https://github.com/cds-snc/sanitize-pii/issues/164)) ([57bc606](https://github.com/cds-snc/sanitize-pii/commit/57bc606652b2db8d5ac4910f971d1a245c01b598))
+* **deps:** update all minor dependencies ([#146](https://github.com/cds-snc/sanitize-pii/issues/146)) ([c78a26a](https://github.com/cds-snc/sanitize-pii/commit/c78a26a7f89c3db9c0528d60be502940627fbc86))
+* **deps:** update all minor dependencies ([#158](https://github.com/cds-snc/sanitize-pii/issues/158)) ([0b83068](https://github.com/cds-snc/sanitize-pii/commit/0b83068686f92296d44710dd68283fa8647e94d3))
+* **deps:** update all non-major github action dependencies ([#151](https://github.com/cds-snc/sanitize-pii/issues/151)) ([0856812](https://github.com/cds-snc/sanitize-pii/commit/08568129388abfce78e83740248dbe2c65000e30))
+* **deps:** update all non-major github action dependencies ([#156](https://github.com/cds-snc/sanitize-pii/issues/156)) ([2c94275](https://github.com/cds-snc/sanitize-pii/commit/2c94275631643a59f45085a1cae2b7866aa56fa0))
+* **deps:** update all non-major github action dependencies ([#163](https://github.com/cds-snc/sanitize-pii/issues/163)) ([d123907](https://github.com/cds-snc/sanitize-pii/commit/d1239071eb449b4b57632c607cef22b677743353))
+* **deps:** update all patch dependencies ([#145](https://github.com/cds-snc/sanitize-pii/issues/145)) ([a4aa6e0](https://github.com/cds-snc/sanitize-pii/commit/a4aa6e0897cc944a976b62e664ef1a66944ae875))
+* **deps:** update all patch dependencies ([#155](https://github.com/cds-snc/sanitize-pii/issues/155)) ([e0dfbbd](https://github.com/cds-snc/sanitize-pii/commit/e0dfbbdfe520cf69c604a2130dfc578ce533fc45))
+* **deps:** update dependency jsdom to v28 ([#149](https://github.com/cds-snc/sanitize-pii/issues/149)) ([8209ad5](https://github.com/cds-snc/sanitize-pii/commit/8209ad590d5c55defb6ccebf3ad2cc7ce4339749))
+* **deps:** update dependency prettier to v3.8.1 ([#147](https://github.com/cds-snc/sanitize-pii/issues/147)) ([fc13ff2](https://github.com/cds-snc/sanitize-pii/commit/fc13ff26c2796dd579c0135603e3f9c47bb77385))
+* **deps:** update github/codeql-action action to v4.34.1 ([#160](https://github.com/cds-snc/sanitize-pii/issues/160)) ([285903e](https://github.com/cds-snc/sanitize-pii/commit/285903e89e5f943d8c5497b13244ac436dd4b414))
+* **deps:** update linters to v10 ([#150](https://github.com/cds-snc/sanitize-pii/issues/150)) ([c8bd471](https://github.com/cds-snc/sanitize-pii/commit/c8bd471d8a7f58e02566800671ca617b1e4c691c))
+* **deps:** update mcr.microsoft.com/devcontainers/base:bullseye docker digest to c4a714f ([#154](https://github.com/cds-snc/sanitize-pii/issues/154)) ([17c338c](https://github.com/cds-snc/sanitize-pii/commit/17c338c4e38516f8a829742085f65a05de2f96b2))
+* **deps:** update node.js to v24.14.1 ([#162](https://github.com/cds-snc/sanitize-pii/issues/162)) ([1a640b2](https://github.com/cds-snc/sanitize-pii/commit/1a640b20340a8c2d413a687e185aaed6c0ecf327))
+* synced file(s) with cds-snc/site-reliability-engineering ([#161](https://github.com/cds-snc/sanitize-pii/issues/161)) ([47af4ca](https://github.com/cds-snc/sanitize-pii/commit/47af4cacf640e58cd5accceca12d7ec4417bbd1f))
+* synced local '.github/workflows/export_github_data.yml' with remote 'tools/sre_file_sync/export_github_data.yml' ([#153](https://github.com/cds-snc/sanitize-pii/issues/153)) ([b8568f5](https://github.com/cds-snc/sanitize-pii/commit/b8568f5716a2416644746c3bf6e48b1c650d338e))
+
 ## [2.1.2](https://github.com/cds-snc/sanitize-pii/compare/v2.1.1...v2.1.2) (2026-02-23)
 
 
