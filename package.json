@@ -59,5 +59,10 @@
     "typescript": "^5.2.2",
     "webpack": "^5.88.2",
     "webpack-cli": "^6.0.0"
+  },
+  "pnpm": {
+    "overrides": {
+      "lru-cache": "11.2.7"
+    }
   }
 }
