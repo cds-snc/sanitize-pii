@@ -1,5 +1,24 @@
 # Changelog
 
+## [2.2.1](https://github.com/cds-snc/sanitize-pii/compare/v2.2.0...v2.2.1) (2026-04-27)
+
+
+### Miscellaneous Chores
+
+* **deps:** lock file maintenance ([#169](https://github.com/cds-snc/sanitize-pii/issues/169)) ([4c98dda](https://github.com/cds-snc/sanitize-pii/commit/4c98ddafe8fbc0ade94c3b69ac123d4a590f6069))
+* **deps:** lock file maintenance ([#180](https://github.com/cds-snc/sanitize-pii/issues/180)) ([901acaa](https://github.com/cds-snc/sanitize-pii/commit/901acaa206b9d80ee6dc5059fd2d8104f95c09a0))
+* **deps:** update all minor dependencies ([#174](https://github.com/cds-snc/sanitize-pii/issues/174)) ([67699e0](https://github.com/cds-snc/sanitize-pii/commit/67699e0872ee2a0b3c2616bed1030acca6758f4a))
+* **deps:** update all non-major github action dependencies ([#178](https://github.com/cds-snc/sanitize-pii/issues/178)) ([cb5d455](https://github.com/cds-snc/sanitize-pii/commit/cb5d455eb9e7c181cbd37cc261a1bf99d1ec55aa))
+* **deps:** update all patch dependencies ([#167](https://github.com/cds-snc/sanitize-pii/issues/167)) ([e01de18](https://github.com/cds-snc/sanitize-pii/commit/e01de1831ef33d3856eddb9533b582cafc62dedf))
+* **deps:** update all patch dependencies ([#176](https://github.com/cds-snc/sanitize-pii/issues/176)) ([4fbe17e](https://github.com/cds-snc/sanitize-pii/commit/4fbe17e53151851101e18dfcb2fe7ebc15e3cbd2))
+* **deps:** update all patch dependencies to v8.58.1 ([#171](https://github.com/cds-snc/sanitize-pii/issues/171)) ([e666a90](https://github.com/cds-snc/sanitize-pii/commit/e666a90c09e8e871c18a8d2b7c1bf36f70412135))
+* **deps:** update dependency eslint to v10.2.0 ([#168](https://github.com/cds-snc/sanitize-pii/issues/168)) ([019963b](https://github.com/cds-snc/sanitize-pii/commit/019963b143fc47a078fa26c797748de637913700))
+* **deps:** update dependency prettier to v3.8.2 ([#172](https://github.com/cds-snc/sanitize-pii/issues/172)) ([5a78b13](https://github.com/cds-snc/sanitize-pii/commit/5a78b13dcba3bda55353ff820f0ae6758dbed596))
+* **deps:** update dependency prettier to v3.8.3 ([#177](https://github.com/cds-snc/sanitize-pii/issues/177)) ([44bfed9](https://github.com/cds-snc/sanitize-pii/commit/44bfed9d083f24cb386aa81aad4f507afc100ff2))
+* **deps:** update googleapis/release-please-action action to v4.4.1 ([#173](https://github.com/cds-snc/sanitize-pii/issues/173)) ([b319020](https://github.com/cds-snc/sanitize-pii/commit/b319020f1457bce5423d81477b7010508317b8b1))
+* **deps:** update mcr.microsoft.com/devcontainers/base:bullseye docker digest to 5139be2 ([#175](https://github.com/cds-snc/sanitize-pii/issues/175)) ([4dc6189](https://github.com/cds-snc/sanitize-pii/commit/4dc6189314c17d1291def1c44b090a4e6c85df39))
+* **deps:** update node.js to v24.15.0 ([#179](https://github.com/cds-snc/sanitize-pii/issues/179)) ([8704808](https://github.com/cds-snc/sanitize-pii/commit/8704808060aa3df370e7ee3911ca58e8ef1caa83))
+
 ## [2.2.0](https://github.com/cds-snc/sanitize-pii/compare/v2.1.2...v2.2.0) (2026-04-09)
 
 
