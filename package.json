@@ -62,7 +62,7 @@
   },
   "pnpm": {
     "overrides": {
-      "lru-cache": "11.3.6"
+      "lru-cache": "11.5.0"
     }
   }
 }
