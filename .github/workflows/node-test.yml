@@ -59,16 +59,3 @@ jobs:
 
       - name: Run build tests
         run: pnpm test:build
-
-  release-please:
-    needs: node-test
-    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
-    permissions:
-      contents: write
-      pull-requests: write
-    uses: ./.github/workflows/release-please.yml
-    secrets:
-      CDS_RELEASE_BOT_APP_ID: ${{ secrets.CDS_RELEASE_BOT_APP_ID }}
-      CDS_RELEASE_BOT_PRIVATE_KEY: ${{ secrets.CDS_RELEASE_BOT_PRIVATE_KEY }}
-      LOG_ANALYTICS_WORKSPACE_ID: ${{ secrets.LOG_ANALYTICS_WORKSPACE_ID }}
-      LOG_ANALYTICS_WORKSPACE_KEY: ${{ secrets.LOG_ANALYTICS_WORKSPACE_KEY }}
