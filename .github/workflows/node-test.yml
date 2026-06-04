@@ -8,12 +8,11 @@ on:
     branches:
       - main
 
-permissions:
-  contents: read
-
 jobs:
   node-test:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
     strategy:
       matrix:
         node-version: [22, 24, 26]
