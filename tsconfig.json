@@ -3,7 +3,7 @@
     "target": "ES2018",
     "lib": ["ES2018", "DOM"],
     "module": "ES2022",
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
     "declaration": true,
     "outDir": "./dist",
     "rootDir": "./src",
