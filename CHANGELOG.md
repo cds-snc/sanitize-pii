@@ -1,5 +1,21 @@
 # Changelog
 
+## [2.3.1](https://github.com/cds-snc/sanitize-pii/compare/v2.3.0...v2.3.1) (2026-11-04)
+
+
+### Bug Fixes
+
+* regex boundaries in patterns ([#276](https://github.com/cds-snc/sanitize-pii/issues/276)) ([1444f21](https://github.com/cds-snc/sanitize-pii/commit/1444f219c80a2b13e2c41ee22e4447e24fc18a7d))
+
+
+### Miscellaneous Chores
+
+* **deps:** lock file maintenance ([#275](https://github.com/cds-snc/sanitize-pii/issues/275)) ([1f7d43f](https://github.com/cds-snc/sanitize-pii/commit/1f7d43f32c6c4621cd1556f21450da262e90ce95))
+* **deps:** update all minor dependencies to v8.72.0 ([#274](https://github.com/cds-snc/sanitize-pii/issues/274)) ([2812821](https://github.com/cds-snc/sanitize-pii/commit/28128218bd1738e8205d73073cfc7eaf2bc5e65e))
+* **deps:** update all non-major github action dependencies ([#272](https://github.com/cds-snc/sanitize-pii/issues/272)) ([4c3bc86](https://github.com/cds-snc/sanitize-pii/commit/4c3bc8619488a1bc7ac117f7619249a9e5b8a366))
+* **deps:** update all patch dependencies ([#273](https://github.com/cds-snc/sanitize-pii/issues/273)) ([cd409ac](https://github.com/cds-snc/sanitize-pii/commit/cd409acba41ab48db70975fb956de1114cbdfc0d))
+* upgrade dns-proxy-action to v1.2.1 ([#269](https://github.com/cds-snc/sanitize-pii/issues/269)) ([3b5ffb9](https://github.com/cds-snc/sanitize-pii/commit/3b5ffb9cf3b2489f1b018d5a96fafb6d24b7cdc3))
+
 ## [2.3.0](https://github.com/cds-snc/sanitize-pii/compare/v2.2.0...v2.3.0) (2026-10-26)
 
 
