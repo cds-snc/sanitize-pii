@@ -4,19 +4,19 @@ export const defaultPatterns: PiiPattern[] = [
   {
     name: 'address_en',
     regex:
-      /\b[\d-]+[\s-]+[A-Z-]+[\s-]+(?:street|st|avenue|ave|road|rd|boulevard|blvd|drive|dr|lane|ln|court|ct|place|pl|way|crescent|cres|circle|cir|parkway|pkwy|terrace|ter|square|sq|trail|trl|close|cl|grove|grv|heights|hts|hill|park|gardens|gdns|manor|mnr|estates|est|valley|vly|view|vw|point|pt|ridge|rdg|bay|cove|cv|mews|row|common|green|grn|landing|lndg|crossing|xing|glen|gln|meadow|mdw|pass|run|bend|curve|curv|fork|frk|gap|hollow|holw|knoll|knl|lock|lck|mill|ml|orchard|orch|path|pth|pine|pne|pond|shoal|shl|shore|shr|spring|spg|summit|smt|trace|trce|track|trak|turnpike|tpke|walk|wlk|woods|wds|private|prv)\b/gi,
+      /\b\d+(?:-\d+)?[\s-]+[A-Z]+(?:-[A-Z]+)*[\s-]+(?:street|st|avenue|ave|road|rd|boulevard|blvd|drive|dr|lane|ln|court|ct|place|pl|way|crescent|cres|circle|cir|parkway|pkwy|terrace|ter|square|sq|trail|trl|close|cl|grove|grv|heights|hts|hill|park|gardens|gdns|manor|mnr|estates|est|valley|vly|view|vw|point|pt|ridge|rdg|bay|cove|cv|mews|row|common|green|grn|landing|lndg|crossing|xing|glen|gln|meadow|mdw|pass|run|bend|curve|curv|fork|frk|gap|hollow|holw|knoll|knl|lock|lck|mill|ml|orchard|orch|path|pth|pine|pne|pond|shoal|shl|shore|shr|spring|spg|summit|smt|trace|trce|track|trak|turnpike|tpke|walk|wlk|woods|wds|private|prv)\b/gi,
     description: 'Address (English)',
   },
   {
     name: 'address_fr',
     regex:
-      /\b[\d-]+[\s-]+(?:rue|rte|avenue|av|boulevard|bd|chemin|ch|route|allée|all|place|pl|voie|v|carré|carre|impasse|imp|quai|qai|passage|pass)\.?[\s-]+(?:des|de\sla|du|d')?[\s-]?[A-ZÀÂÄÇÉÈÊËÎÏÔÖÙÛÜŸ-]+\b/gi,
+      /\b\d+(?:-\d+)?[\s-]+(?:rue|rte|avenue|av|boulevard|bd|chemin|ch|route|allée|all|place|pl|voie|v|carré|carre|impasse|imp|quai|qai|passage|pass)\.?[\s-]+(?:des|de\sla|du|d')?[\s-]?[A-ZÀÂÄÇÉÈÊËÎÏÔÖÙÛÜŸ]+(?:-[A-ZÀÂÄÇÉÈÊËÎÏÔÖÙÛÜŸ]+)*\b/gi,
     description: 'Address (French)',
   },
   {
     name: 'api_key_gc_notify',
     regex:
-      /\bgcntfy-[A-Z0-9-_]+-[0-9A-F]{8}-[0-9A-F]{4}-[0-9A-F]{4}-[0-9A-F]{4}-[0-9A-F]{12}\b/gi,
+      /(?<![\w-])gcntfy-[A-Z0-9-_]+-[0-9A-F]{8}-[0-9A-F]{4}-[0-9A-F]{4}-[0-9A-F]{4}-[0-9A-F]{12}\b/gi,
     description: 'API key (GC Notify)',
   },
   {

@@ -251,6 +251,10 @@ describe('Default Patterns', () => {
         '101 Pine Boulevard',
         '202 Oak Drive',
         '45-303 Cedar Prv',
+        '123 Saint-John Street',
+        '45-303 Saint-John St',
+        '123-Main-St',
+        '123\tMain  Street',
       ];
 
       validAddresses.forEach(address => {
@@ -264,6 +268,8 @@ describe('Default Patterns', () => {
         '12345',
         'Elm Avenue 456',
         'Boulevard 789',
+        '1---x',
+        '123 --- Street',
       ];
 
       invalidAddresses.forEach(address => {
@@ -284,6 +290,10 @@ describe('Default Patterns', () => {
         '101 Chemin du Moulin',
         '202 Allée des Fleurs',
         "4520-303 Impasse d'Orléans",
+        '45-303 Rue Saint-Germain',
+        '123-rue-Saint-Germain',
+        '123 Rte. de la Paix',
+        '123\tRue  des Fleurs',
       ];
 
       validAddresses.forEach(address => {
@@ -297,6 +307,8 @@ describe('Default Patterns', () => {
         '456 Avenue',
         'Boulevard Saint-Germain 789',
         'Chemin du Moulin',
+        '1---x',
+        '123 rue ---!',
       ];
 
       invalidAddresses.forEach(address => {
@@ -842,6 +854,7 @@ describe('Default Patterns', () => {
         'gcntfy-test_underscores_pattern-e2253c4f-b642-4ef5-a104-f3d823bb2158',
         'gcntfy-another-name-9e8cada6-6f29-4afb-866c-3d696b60735e',
         'gcntfy-some-key-name-ae6dd110-78b4-49a0-94b8-748121735882',
+        'gcntfy-gcntfy-test-e2253c4f-b642-4ef5-a104-f3d823bb2158',
       ];
       validKeys.forEach(key => {
         expect(testFullStringMatch(apiKeyPattern.regex, key)).toBe(true);
@@ -855,11 +868,18 @@ describe('Default Patterns', () => {
         'gcntfy-1234-5678-90ab-cdefg',
         'gcntfy-nogap9e8cada6-6f29-4afb-866c-3d696b60735e',
         'notgcntfy-e2253c4f-b642-4ef5-a104-f3d823bb2158',
+        'prefix-gcntfy-test-e2253c4f-b642-4ef5-a104-f3d823bb2158',
       ];
       invalidKeys.forEach(key => {
         expect(apiKeyPattern.regex.test(key)).toBe(false);
         apiKeyPattern.regex.lastIndex = 0;
       });
+    });
+
+    it('should match keys separated by whitespace or punctuation', () => {
+      const key = 'gcntfy-test-e2253c4f-b642-4ef5-a104-f3d823bb2158';
+      const regex = new RegExp(apiKeyPattern.regex);
+      expect(`API key: "${key}"; ${key}`.match(regex)).toEqual([key, key]);
     });
   });
 
