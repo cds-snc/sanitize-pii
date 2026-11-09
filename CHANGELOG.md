@@ -1,5 +1,15 @@
 # Changelog
 
+## [2.3.2](https://github.com/cds-snc/sanitize-pii/compare/v2.3.1...v2.3.2) (2026-11-09)
+
+
+### Miscellaneous Chores
+
+* **deps:** lock file maintenance ([#280](https://github.com/cds-snc/sanitize-pii/issues/280)) ([eed3c0d](https://github.com/cds-snc/sanitize-pii/commit/eed3c0d4b467d645b67490f7c5e263d5258e7a0b))
+* **deps:** update all minor dependencies ([#279](https://github.com/cds-snc/sanitize-pii/issues/279)) ([6e09c74](https://github.com/cds-snc/sanitize-pii/commit/6e09c7408b5ec38a030c0353244cc1f1e7fc9d5d))
+* **deps:** update all patch dependencies ([#277](https://github.com/cds-snc/sanitize-pii/issues/277)) ([3f88651](https://github.com/cds-snc/sanitize-pii/commit/3f886514a7dbfd20dcddd8d889ecf28cff051c42))
+* **deps:** update cds-snc/dns-proxy-action action to v1.2.2 ([#278](https://github.com/cds-snc/sanitize-pii/issues/278)) ([52885a0](https://github.com/cds-snc/sanitize-pii/commit/52885a082bf7f38450fcc3ab5477a3cb1f950c56))
+
 ## [2.3.1](https://github.com/cds-snc/sanitize-pii/compare/v2.3.0...v2.3.1) (2026-11-04)
 
 
