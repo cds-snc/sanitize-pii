@@ -1,5 +1,21 @@
 # Changelog
 
+## [2.3.2](https://github.com/cds-snc/sanitize-pii/compare/v2.3.1...v2.3.2) (2026-11-23)
+
+
+### Miscellaneous Chores
+
+* **deps:** lock file maintenance ([#280](https://github.com/cds-snc/sanitize-pii/issues/280)) ([eed3c0d](https://github.com/cds-snc/sanitize-pii/commit/eed3c0d4b467d645b67490f7c5e263d5258e7a0b))
+* **deps:** lock file maintenance ([#287](https://github.com/cds-snc/sanitize-pii/issues/287)) ([0d1b1ee](https://github.com/cds-snc/sanitize-pii/commit/0d1b1ee07609a099ae01f74c381d3d6d93638a19))
+* **deps:** update all minor dependencies ([#279](https://github.com/cds-snc/sanitize-pii/issues/279)) ([6e09c74](https://github.com/cds-snc/sanitize-pii/commit/6e09c7408b5ec38a030c0353244cc1f1e7fc9d5d))
+* **deps:** update all non-major github action dependencies ([#282](https://github.com/cds-snc/sanitize-pii/issues/282)) ([d1a35fc](https://github.com/cds-snc/sanitize-pii/commit/d1a35fc0c2bb98196056dc5d3a27a2ff078c0369))
+* **deps:** update all patch dependencies ([#277](https://github.com/cds-snc/sanitize-pii/issues/277)) ([3f88651](https://github.com/cds-snc/sanitize-pii/commit/3f886514a7dbfd20dcddd8d889ecf28cff051c42))
+* **deps:** update all patch dependencies ([#284](https://github.com/cds-snc/sanitize-pii/issues/284)) ([9428c24](https://github.com/cds-snc/sanitize-pii/commit/9428c24d877dd85c85f3d330c29ab153bfe67cf4))
+* **deps:** update cds-snc/dns-proxy-action action to v1.2.2 ([#278](https://github.com/cds-snc/sanitize-pii/issues/278)) ([52885a0](https://github.com/cds-snc/sanitize-pii/commit/52885a082bf7f38450fcc3ab5477a3cb1f950c56))
+* **deps:** update dependency eslint to v10.15.0 ([#285](https://github.com/cds-snc/sanitize-pii/issues/285)) ([2cbfe9a](https://github.com/cds-snc/sanitize-pii/commit/2cbfe9a2ffa352e50a0926f458432f3e60205b10))
+* **deps:** update dependency prettier to v3.10.1 ([#286](https://github.com/cds-snc/sanitize-pii/issues/286)) ([2dc2197](https://github.com/cds-snc/sanitize-pii/commit/2dc2197b357b237e845055ddb480834d1a8c0402))
+* **deps:** update pnpm to v11.28.11 ([#283](https://github.com/cds-snc/sanitize-pii/issues/283)) ([e8b08dc](https://github.com/cds-snc/sanitize-pii/commit/e8b08dc5bcb6ff22078466d0de7310dd46ab891c))
+
 ## [2.3.1](https://github.com/cds-snc/sanitize-pii/compare/v2.3.0...v2.3.1) (2026-11-04)
 
 
